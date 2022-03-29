@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="634.0" prefWidth="904.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bank.aplikacja_bankowa.AdminMainPanelController">
+   <bottom>
+      <TabPane prefHeight="520.0" prefWidth="904.0" style="-fx-background-color: #E8E9E0;" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="Doodaj klienta">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <BorderPane layoutX="352.0" layoutY="123.0" prefHeight="472.0" prefWidth="904.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <top>
+                              <Label text="Dane klienta" BorderPane.alignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                           </top>
+                           <center>
+                              <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                 <content>
+                                    <GridPane alignment="CENTER" prefHeight="396.0" prefWidth="904.0" style="-fx-background-color: #d4d4d4;">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="771.2000122070312" minWidth="10.0" prefWidth="140.79998779296875" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="676.0000122070312" minWidth="10.0" prefWidth="262.9999755859374" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="1107.2000244140625" minWidth="10.0" prefWidth="266.20002441406245" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="446.4000244140625" minWidth="0.0" prefWidth="92.0000122070312" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints maxHeight="65.0" minHeight="65.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="65.0" minHeight="65.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="65.0" minHeight="65.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="65.0" minHeight="65.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="65.0" minHeight="65.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="65.0" minHeight="65.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="65.0" minHeight="65.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="65.0" minHeight="65.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="65.0" minHeight="65.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="65.0" minHeight="65.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="65.0" minHeight="65.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="65.0" minHeight="65.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="65.0" minHeight="65.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="65.0" minHeight="65.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <AnchorPane prefHeight="69.0" prefWidth="662.0" style="-fx-background-color: #E8E9EB; -fx-background-radius: 20 0 0 0;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <children>
+                                                <TextField fx:id="clientName" layoutX="14.0" layoutY="20.0" />
+                                                <Label layoutX="14.0" layoutY="5.0" text="imie" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="27.0" prefWidth="662.0" style="-fx-background-color: #E8E9EB;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                             <children>
+                                                <TextField fx:id="clientPesel" layoutX="14.0" layoutY="23.0" />
+                                                <Label layoutX="14.0" layoutY="5.0" text="pesel" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="166.0" prefWidth="662.0" style="-fx-background-color: #E8E9EB;" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                             <children>
+                                                <TextField fx:id="clientCitizenship" layoutX="14.0" layoutY="23.0" />
+                                                <Label layoutX="14.0" layoutY="5.0" text="obywatelstwo" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB;" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                             <children>
+                                                <TextField fx:id="clientMotherMaidenSurname" layoutX="14.0" layoutY="20.0" />
+                                                <Label layoutX="14.0" layoutY="5.0" text="nazwisko panieńskie matki" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB; -fx-background-radius: 0 20 0 0;" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                             <children>
+                                                <TextField fx:id="clientSurname" layoutY="20.0" />
+                                                <Label layoutY="6.0" text="nazwisko" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB;" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                             <children>
+                                                <Label layoutY="5.0" text="data urodzenia" />
+                                                <DatePicker fx:id="clientDateOfBirth" layoutY="20.0" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB;" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                             <children>
+                                                <TextField fx:id="clenntCountryOfBirth" layoutY="20.0" />
+                                                <Label layoutY="6.0" text="kraj urodzenia" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB;" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                                             <children>
+                                                <Label layoutY="5.0" text="miejsce urodzenia" />
+                                                <TextField fx:id="clientPlaceOfBirth" layoutY="20.0" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB; -fx-background-radius: 0 20 0 0;" GridPane.columnIndex="2" GridPane.rowIndex="7">
+                                             <children>
+                                                <TextField fx:id="clientStreet" layoutX="2.0" layoutY="20.0" />
+                                                <Label layoutX="2.0" layoutY="5.0" text="ulica" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB; -fx-background-radius: 20 0 0 0;" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                             <children>
+                                                <TextField fx:id="clientCity" layoutX="14.0" layoutY="20.0" />
+                                                <Label layoutX="14.0" layoutY="5.0" text="miasto" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                             <children>
+                                                <Label layoutX="14.0" layoutY="13.0" text=" Dane kontaktowe">
+                                                   <font>
+                                                      <Font name="System Bold" size="26.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="65.0" prefWidth="298.0" style="-fx-background-color: #E8E9EB;" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                                             <children>
+                                                <TextField fx:id="clientBuildingNumber" layoutX="14.0" layoutY="20.0" />
+                                                <Label layoutX="14.0" layoutY="5.0" text="numer budynku" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="65.0" prefWidth="302.0" style="-fx-background-color: #E8E9EB;" GridPane.columnIndex="2" GridPane.rowIndex="8">
+                                             <children>
+                                                <TextField fx:id="clientFlatNumber" layoutY="20.0" />
+                                                <Label layoutY="6.0" text="numer mieszkania" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="98.0" prefWidth="298.0" style="-fx-background-color: #E8E9EB;" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                                             <children>
+                                                <TextField fx:id="clientZipCode" layoutX="14.0" layoutY="20.0" />
+                                                <Label layoutX="14.0" layoutY="5.0" text="kod pocztowy" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="65.0" prefWidth="302.0" style="-fx-background-color: #E8E9EB;" GridPane.columnIndex="2" GridPane.rowIndex="9">
+                                             <children>
+                                                <TextField fx:id="clientPhonNumber" layoutY="20.0" />
+                                                <Label layoutY="5.0" text="numer telefonu" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB; -fx-background-radius: 0 0 0 20;" GridPane.columnIndex="1" GridPane.rowIndex="10">
+                                             <children>
+                                                <TextField fx:id="clientEmail" layoutX="14.0" layoutY="20.0" />
+                                                <Label layoutX="14.0" layoutY="5.0" text="adres email" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB; -fx-background-radius: 0 0 20 0;" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB; -fx-background-radius: 0 0 0 20;" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                             <children>
+                                                <DatePicker fx:id="clientIdExpirationDate" layoutX="14.0" layoutY="20.0" />
+                                                <Label layoutX="14.0" layoutY="6.0" text="data ważności dowodu" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB; -fx-background-radius: 0 0 20 0;" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                                             <children>
+                                                <TextField fx:id="clientIdNumber" layoutY="20.0" />
+                                                <Label layoutY="5.0" text="nunmer dowodu" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="13">
+                                             <children>
+                                                <Button fx:id="clearClientFormButton" layoutX="93.0" layoutY="7.0" mnemonicParsing="false" onAction="#clearClientForm" prefHeight="50.0" prefWidth="112.0" style="-fx-background-color: #0269A4;" text="Wyczyść" textFill="#e4e4e4">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                </Button>
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="13">
+                                             <children>
+                                                <Button fx:id="addClientButton" layoutX="95.0" layoutY="7.0" mnemonicParsing="false" onAction="#addClient" prefHeight="50.0" prefWidth="112.0" style="-fx-background-color: #0269A4;" text="Dodaj" textFill="#e4e4e4">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                </Button>
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="11">
+                                             <children>
+                                                <Label layoutX="14.0" layoutY="13.0" text="Dane do logowania">
+                                                   <font>
+                                                      <Font name="System Bold" size="26.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB; -fx-background-radius: 20 0 0 20;" GridPane.columnIndex="1" GridPane.rowIndex="12">
+                                             <children>
+                                                <TextField fx:id="clientUsername" layoutX="14.0" layoutY="20.0" />
+                                                <Label layoutX="14.0" layoutY="6.0" text="login" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB; -fx-background-radius: 0 20 20 0;" GridPane.columnIndex="2" GridPane.rowIndex="12">
+                                             <children>
+                                                <PasswordField fx:id="clientPassword" layoutY="20.0" />
+                                                <Label layoutY="5.0" text="hasło" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                             <children>
+                                                <Label layoutX="14.0" layoutY="13.0" text="Dane osobowe">
+                                                   <font>
+                                                      <Font name="System Bold" size="26.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </GridPane>
+                                 </content>
+                              </ScrollPane>
+                           </center>
+                        </BorderPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Dodaj pracownika banku">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <BorderPane layoutX="352.0" layoutY="103.0" prefHeight="405.6" prefWidth="904.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <center>
+                              <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                 <content>
+                                    <GridPane alignment="CENTER" prefHeight="396.0" prefWidth="904.0" style="-fx-background-color: #d4d4d4;">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="771.2000122070312" minWidth="10.0" prefWidth="140.79998779296875" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="676.0000122070312" minWidth="10.0" prefWidth="262.9999755859374" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="1107.2000244140625" minWidth="10.0" prefWidth="266.20002441406245" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="446.4000244140625" minWidth="0.0" prefWidth="92.0000122070312" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints maxHeight="65.0" minHeight="65.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="65.0" minHeight="65.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="65.0" minHeight="65.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="65.0" minHeight="65.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="65.0" minHeight="65.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="65.0" minHeight="65.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="65.0" minHeight="65.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="65.0" minHeight="65.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <AnchorPane prefHeight="69.0" prefWidth="662.0" style="-fx-background-color: #E8E9EB; -fx-background-radius: 20 0 0 0;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <children>
+                                                <TextField fx:id="employeeName" layoutX="14.0" layoutY="20.0" />
+                                                <Label layoutX="14.0" layoutY="5.0" text="imie" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB; -fx-background-radius: 0 20 0 0;" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                             <children>
+                                                <TextField fx:id="employeeSurname" layoutY="20.0" />
+                                                <Label layoutY="6.0" text="nazwisko" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB; -fx-background-radius: 0 20 20 0;" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                                             <children>
+                                                <TextField fx:id="employeePhonNumber" layoutY="20.0" />
+                                                <Label layoutY="5.0" text="numer telefonu" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB; -fx-background-radius: 20 0 0 20;" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                             <children>
+                                                <TextField fx:id="employeeEmail" layoutX="14.0" layoutY="20.0" />
+                                                <Label layoutX="14.0" layoutY="5.0" text="adres email" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                             <children>
+                                                <Label layoutX="14.0" layoutY="13.0" text="Dane kontaktowe">
+                                                   <font>
+                                                      <Font name="System Bold" size="26.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB; -fx-background-radius: 0 0 0 20;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                             <children>
+                                                <TextField fx:id="employeeCitizenship" layoutX="14.0" layoutY="20.0" />
+                                                <Label layoutX="14.0" layoutY="5.0" text="obywatelstwo" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB; -fx-background-radius: 0 0 20 0;" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                             <children>
+                                                <DatePicker fx:id="employeeDateOfBirth" layoutY="20.0" />
+                                                <Label layoutY="5.0" text="data urodzenia" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                             <children>
+                                                <Button fx:id="clearEmployeeFormButton" layoutX="93.0" layoutY="7.0" mnemonicParsing="false" onAction="#clearEmployeeForm" prefHeight="50.0" prefWidth="112.0" style="-fx-background-color: #0269A4;" text="Wyczyść" textFill="#e4e4e4">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                </Button>
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="7">
+                                             <children>
+                                                <Button fx:id="addEmployeeFormButton" layoutX="95.0" layoutY="7.0" mnemonicParsing="false" onAction="#addEmployee" prefHeight="50.0" prefWidth="112.0" style="-fx-background-color: #0269A4;" text="Dodaj" textFill="#e4e4e4">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                </Button>
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                             <children>
+                                                <Label layoutX="14.0" layoutY="13.0" text="Dane do logowania">
+                                                   <font>
+                                                      <Font name="System Bold" size="26.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB; -fx-background-radius: 20 0 0 20;" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                             <children>
+                                                <TextField fx:id="employeeUsername" layoutX="14.0" layoutY="20.0" />
+                                                <Label layoutX="14.0" layoutY="6.0" text="login" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB; -fx-background-radius: 0 20 20 0;" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                                             <children>
+                                                <PasswordField fx:id="employeePassword" layoutY="20.0" />
+                                                <Label layoutY="5.0" text="hasło" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                             <children>
+                                                <Label layoutX="14.0" layoutY="13.0" text="Dane osobowe">
+                                                   <font>
+                                                      <Font name="System Bold" size="26.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </GridPane>
+                                 </content>
+                              </ScrollPane>
+                           </center>
+                           <top>
+                              <Label text="Dane pracownika" BorderPane.alignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                           </top>
+                        </BorderPane>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </bottom>
+   <top>
+      <BorderPane prefHeight="133.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <left>
+            <AnchorPane prefHeight="134.0" prefWidth="250.0" style="-fx-background-color: #e4e4e4;" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+               <children>
+                  <Label layoutX="1.0" layoutY="14.0" text="imie:" AnchorPane.leftAnchor="0.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="30.0" layoutY="48.0" text="nazwisko:" AnchorPane.leftAnchor="0.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Text fx:id="personName" layoutX="51.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <Text fx:id="personSurname" layoutX="76.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </AnchorPane>
+         </left>
+         <right>
+            <AnchorPane prefHeight="200.0" prefWidth="256.0" style="-fx-background-color: #2C95B5;" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane prefHeight="200.0" prefWidth="274.0" style="-fx-background-color: #0269A4; -fx-background-radius: 20 0 0 20;">
+                     <children>
+                        <Label layoutX="14.0" layoutY="24.0" text="Tryb" textFill="#e4e4e4">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="74.0" text="Administratora" textFill="#e4e4e4">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </right>
+         <center>
+            <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #e4e4e4;" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane prefHeight="200.0" prefWidth="315.0" style="-fx-background-color: #A5E0E4; -fx-background-radius: 20 0 0 20;">
+                     <children>
+                        <AnchorPane layoutX="102.0" prefHeight="200.0" prefWidth="192.0" style="-fx-background-color: #50B0C8; -fx-background-radius: 20 0 0 20;" />
+                        <AnchorPane layoutX="220.0" prefHeight="200.0" prefWidth="161.0" style="-fx-background-color: #2C95B5; -fx-background-radius: 20 0 0 20;" />
+                     </children></AnchorPane>
+               </children>
+            </HBox>
+         </center>
+      </BorderPane>
+   </top>
+</BorderPane>

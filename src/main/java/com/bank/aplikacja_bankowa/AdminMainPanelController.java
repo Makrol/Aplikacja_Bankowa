@@ -23,7 +23,7 @@ public class AdminMainPanelController {
     private Button clearEmployeeFormButton;
 
     @FXML
-    private TextField clenntCountryOfBirth;
+    private TextField clientCountryOfBirth;
 
     @FXML
     private TextField clientBuildingNumber;
@@ -62,7 +62,7 @@ public class AdminMainPanelController {
     private TextField clientPesel;
 
     @FXML
-    private TextField clientPhonNumber;
+    private TextField clientPhoneNumber;
 
     @FXML
     private TextField clientPlaceOfBirth;
@@ -95,7 +95,7 @@ public class AdminMainPanelController {
     private PasswordField employeePassword;
 
     @FXML
-    private TextField employeePhonNumber;
+    private TextField employeePhoneNumber;
 
     @FXML
     private TextField employeeSurname;
@@ -110,30 +110,100 @@ public class AdminMainPanelController {
     private Text personSurname;
 
     @FXML
-    void addClient(ActionEvent event) {
+    private Button logoutButton;
+
+    @FXML
+    public void initialize(){
+
+        personName.setText(Main.currentUser.name);
+        personSurname.setText(Main.currentUser.surname);
 
     }
 
     @FXML
+    void addClient(ActionEvent event) throws IOException{
+        Client client = new Client(
+                  clientName.getText(),
+                clientSurname.getText(),
+                clientCitizenship.getText(),
+                clientDateOfBirth.getValue(),
+                clientEmail.getText(),
+                clientPhoneNumber.getText(),
+                false,
+                clientPesel.getText(),
+                clientCountryOfBirth.getText(),
+                clientMotherMaidenSurname.getText(),
+                clientPlaceOfBirth.getText(),
+                clientIdExpirationDate.getValue(),
+                clientIdNumber.getText(),
+                clientCity.getText(),
+                clientStreet.getText(),
+                clientBuildingNumber.getText(),
+                clientFlatNumber.getText(),
+                clientZipCode.getText()
+        );
+        SerializeFunctions.serializePerson(client,clientUsername.getText(),clientPassword.getText());
+    }
+    @FXML
     void addEmployee(ActionEvent event) throws IOException {
+
         Employee employee = new Employee(
                 employeeName.getText(),
                 employeeSurname.getText(),
                 employeeCitizenship.getText(),
                 employeeDateOfBirth.getValue(),
                 employeeEmail.getText(),
-                employeePhonNumber.getText()
+                employeePhoneNumber.getText(),
+                true
         );
-        SerializeFunctions.serializeObjectToFile(employee,"src/main/resources/data/u1.data");
+
+       SerializeFunctions.serializePerson(employee,employeeUsername.getText(),employeePassword.getText());
     }
 
     @FXML
     void clearClientForm(ActionEvent event) {
-
+        clearClientFields();
     }
 
     @FXML
     void clearEmployeeForm(ActionEvent event) {
-
+        clearEmployerFields();
     }
+    @FXML
+    void logout(ActionEvent event) throws IOException{
+            Main.changeScreen("loginWindow.fxml",600,400);
+            Main.currentUser = null;
+    }
+    private void clearEmployerFields(){
+        employeeUsername.clear();
+        employeeCitizenship.clear();
+        employeePhoneNumber.clear();
+        employeeEmail.clear();
+        employeeName.clear();
+        employeeDateOfBirth.getEditor().clear();
+        employeePassword.clear();
+        employeeSurname.clear();
+    }
+    private void clearClientFields(){
+        clientPassword.clear();
+        clientCitizenship.clear();
+        clientCity.clear();
+        clientUsername.clear();
+        clientBuildingNumber.clear();
+        clientCountryOfBirth.clear();
+        clientDateOfBirth.getEditor().clear();
+        clientEmail.clear();
+        clientFlatNumber.clear();
+        clientIdExpirationDate.getEditor().clear();
+        clientIdNumber.clear();
+        clientMotherMaidenSurname.clear();
+        clientName.clear();
+        clientPesel.clear();
+        clientPhoneNumber.clear();
+        clientPlaceOfBirth.clear();
+        clientStreet.clear();
+        clientSurname.clear();
+        clientZipCode.clear();
+    }
+
 }

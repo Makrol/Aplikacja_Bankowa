@@ -5,9 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1d28b12-cd6a-41b0-b3b4-2c11768a6015" name="Changes" comment="Initial commit">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/ClientMainPanelController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/UserFileNameTab.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Aplikacja-Bankowa/.gitattributes" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Aplikacja_Bankowa/.gitattributes" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Aplikacja_Bankowa/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/AdminMainPanelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/AdminMainPanelController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/LogInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/LogInController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/ScreenController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/SerializeFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/SerializeFunctions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/bank/aplikacja_bankowa/admin.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/bank/aplikacja_bankowa/adminMainPanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/bank/aplikacja_bankowa/adminMainPanel.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/bank/aplikacja_bankowa/user.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/bank/aplikacja_bankowa/userMainPanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/bank/aplikacja_bankowa/userMainPanel.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +44,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Aplikacja_Bankowa" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -40,8 +56,10 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mongo" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/com/bank/aplikacja_bankowa/hello-view.fxml" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -83,8 +101,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.BankApp" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.BankApp" />
       </list>
     </recent_temporary>
   </component>
@@ -102,10 +120,29 @@
       <workItem from="1648567527323" duration="167000" />
       <workItem from="1648567777509" duration="281000" />
       <workItem from="1648572016376" duration="8027000" />
+      <workItem from="1648583453237" duration="2939000" />
+      <workItem from="1648627306928" duration="31000" />
+      <workItem from="1648819151496" duration="579000" />
+      <workItem from="1648975549455" duration="79000" />
+      <workItem from="1649259080631" duration="7730000" />
+      <workItem from="1649363078321" duration="351000" />
+      <workItem from="1649610058680" duration="9000" />
+      <workItem from="1649777806493" duration="6546000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

@@ -35,7 +35,7 @@
                               </Label>
                            </top>
                            <center>
-                              <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                              <ScrollPane prefHeight="200.0" prefWidth="200.0" vvalue="0.96" BorderPane.alignment="CENTER">
                                  <content>
                                     <GridPane alignment="CENTER" prefHeight="396.0" prefWidth="904.0" style="-fx-background-color: #d4d4d4;">
                                        <columnConstraints>
@@ -99,7 +99,7 @@
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB;" GridPane.columnIndex="2" GridPane.rowIndex="3">
                                              <children>
-                                                <TextField fx:id="clenntCountryOfBirth" layoutY="20.0" />
+                                                <TextField fx:id="clientCountryOfBirth" layoutY="20.0" />
                                                 <Label layoutY="6.0" text="kraj urodzenia" />
                                              </children>
                                           </AnchorPane>
@@ -150,7 +150,7 @@
                                           </AnchorPane>
                                           <AnchorPane prefHeight="65.0" prefWidth="302.0" style="-fx-background-color: #E8E9EB;" GridPane.columnIndex="2" GridPane.rowIndex="9">
                                              <children>
-                                                <TextField fx:id="clientPhonNumber" layoutY="20.0" />
+                                                <TextField fx:id="clientPhoneNumber" layoutY="20.0" />
                                                 <Label layoutY="5.0" text="numer telefonu" />
                                              </children>
                                           </AnchorPane>
@@ -271,7 +271,7 @@
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB; -fx-background-radius: 0 20 20 0;" GridPane.columnIndex="2" GridPane.rowIndex="4">
                                              <children>
-                                                <TextField fx:id="employeePhonNumber" layoutY="20.0" />
+                                                <TextField fx:id="employeePhoneNumber" layoutY="20.0" />
                                                 <Label layoutY="5.0" text="numer telefonu" />
                                              </children>
                                           </AnchorPane>
@@ -389,6 +389,11 @@
                   </Label>
                   <Text fx:id="personName" layoutX="51.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" />
                   <Text fx:id="personSurname" layoutX="76.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <Button fx:id="logoutButton" layoutX="72.0" layoutY="127.0" mnemonicParsing="false" onAction="#logout" prefHeight="58.0" prefWidth="106.0" style="-fx-background-color: #0269A4;" text="Wyloguj" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
                </children>
                <padding>
                   <Insets left="10.0" />

@@ -12,7 +12,6 @@ import java.io.IOException;
 import java.util.HashMap;
 
 public class LogInController {
-    private HashMap<String,String> loginData = new HashMap<>();
     @FXML
     private Button loginButton;
 
@@ -28,23 +27,28 @@ public class LogInController {
     @FXML
     private PasswordField password;
 
-    public LogInController (){
-        loginData.put("system","1234");
-    }
-
     @FXML
-    void userLogin(ActionEvent event) throws IOException {
+    void userLogin(ActionEvent event) throws IOException,ClassNotFoundException {
+        //Main.addAndActiveScreen("adminMainPanel.fxml");
+        if((!username.getText().isEmpty())&&(!password.getText().isEmpty())&&
+            Main.userFileNameTab.userLoginData.containsKey(username.getText())&&
+            Main.userFileNameTab.userLoginData.get(username.getText()).equals(password.getText())){
 
-        //Main main = new Main();
-        if(loginData.get(username.getText()).equals(password.getText())){
+            Main.currentUser = (Person) SerializeFunctions.deSerializeObjectFromFile("src/main/resources/data/"+Main.userFileNameTab.userFileName.get(username.getText())+".data");
+            if(Main.currentUser.admin==true){
+                Main.changeScreen("adminMainPanel.fxml",904.0f,634.0f);
 
-           Main.addAndActiveScreen("adminMainPanel.fxml");
+            }
+            else{
+                Main.changeScreen("userMainPanel.fxml",904.0f,634.0f);
+            }
         }
-        else
-            wrongLogin.setText("Nie poprawny login lub hasło!");
+        else{
+            wrongLogin.setText("Nie poprawny login lub hasło !!");
+        }
     }
     @FXML
-    void cancelLogin(ActionEvent event) throws IOException{
+    void cancelLogin(ActionEvent event){
         Platform.exit();
     }
 }

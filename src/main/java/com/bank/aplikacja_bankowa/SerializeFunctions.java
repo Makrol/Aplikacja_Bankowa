@@ -25,6 +25,15 @@ public abstract class SerializeFunctions {
         objectInputStream.close();
         return object;
     }
+    public static void serializePerson(Person person,String username,String password,String accountNumber) throws IOException{
+        SerializeFunctions.serializeObjectToFile(person,"src/main/resources/data/u"+Main.userFileNameTab.userCounter.toString()+".data");
+        Main.userFileNameTab.userFileName.put(username,"u"+Main.userFileNameTab.userCounter);
+        Main.userFileNameTab.userLoginData.put(username,password);
+        Main.userFileNameTab.accountNumberFile.put(accountNumber,"u"+Main.userFileNameTab.userCounter);
+        Main.userFileNameTab.userCounter++;
+        SerializeFunctions.serializeObjectToFile(Main.userFileNameTab,"src/main/resources/data/loginData.data");
+
+    }
     public static void serializePerson(Person person,String username,String password) throws IOException{
         SerializeFunctions.serializeObjectToFile(person,"src/main/resources/data/u"+Main.userFileNameTab.userCounter.toString()+".data");
         Main.userFileNameTab.userFileName.put(username,"u"+Main.userFileNameTab.userCounter);

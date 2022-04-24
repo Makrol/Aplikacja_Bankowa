@@ -114,14 +114,17 @@ public class AdminMainPanelController {
 
     @FXML
     public void initialize(){
-
-        personName.setText(Main.currentUser.name);
-        personSurname.setText(Main.currentUser.surname);
+        validate();
+       // personName.setText(Main.currentUser.name);
+       // personSurname.setText(Main.currentUser.surname);
 
     }
 
     @FXML
     void addClient(ActionEvent event) throws IOException{
+        String accountNumber = Main.bankData.generateAccountNumber();
+        SerializeFunctions.serializeObjectToFile(Main.bankData,"src/main/resources/data/bankData.data");
+        System.out.println("wybrany" + accountNumber);
         Client client = new Client(
                   clientName.getText(),
                 clientSurname.getText(),
@@ -140,9 +143,12 @@ public class AdminMainPanelController {
                 clientStreet.getText(),
                 clientBuildingNumber.getText(),
                 clientFlatNumber.getText(),
-                clientZipCode.getText()
+                clientZipCode.getText(),
+                accountNumber
         );
-        SerializeFunctions.serializePerson(client,clientUsername.getText(),clientPassword.getText());
+        SerializeFunctions.serializePerson(client,clientUsername.getText(),clientPassword.getText(),accountNumber);
+        //String clientFileName = Main.userFileNameTab.findUserFileByLogin(clientUsername.getText());
+       // Main.userFileNameTab.addNewAccountNumber(accountNumber,clientFileName);
     }
     @FXML
     void addEmployee(ActionEvent event) throws IOException {
@@ -171,7 +177,7 @@ public class AdminMainPanelController {
     }
     @FXML
     void logout(ActionEvent event) throws IOException{
-            Main.changeScreen("loginWindow.fxml",600,400);
+            Main.changeScreen("loginWindow.fxml",600,277);
             Main.currentUser = null;
     }
     private void clearEmployerFields(){
@@ -205,5 +211,14 @@ public class AdminMainPanelController {
         clientSurname.clear();
         clientZipCode.clear();
     }
-
+    @FXML
+    public void validate(){
+        clientPesel.focusedProperty().addListener((arg0, oldValue, newValue)->{
+            if (!newValue) {
+                if (!clientPesel.getText().matches("\\d+")) {
+                    clientPesel.setText("");
+                }
+            }
+        });
+    }
 }

@@ -9,7 +9,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
-import java.util.HashMap;
+
 
 public class LogInController {
     @FXML
@@ -29,13 +29,14 @@ public class LogInController {
 
     @FXML
     void userLogin(ActionEvent event) throws IOException,ClassNotFoundException {
-        //Main.addAndActiveScreen("adminMainPanel.fxml");
+       // Main.changeScreen("adminMainPanel.fxml",904.0f,634.0f);
+
         if((!username.getText().isEmpty())&&(!password.getText().isEmpty())&&
             Main.userFileNameTab.userLoginData.containsKey(username.getText())&&
             Main.userFileNameTab.userLoginData.get(username.getText()).equals(password.getText())){
 
             Main.currentUser = (Person) SerializeFunctions.deSerializeObjectFromFile("src/main/resources/data/"+Main.userFileNameTab.userFileName.get(username.getText())+".data");
-            if(Main.currentUser.admin==true){
+            if(Main.currentUser.admin){
                 Main.changeScreen("adminMainPanel.fxml",904.0f,634.0f);
 
             }
@@ -46,6 +47,8 @@ public class LogInController {
         else{
             wrongLogin.setText("Nie poprawny login lub hasło !!");
         }
+
+
     }
     @FXML
     void cancelLogin(ActionEvent event){

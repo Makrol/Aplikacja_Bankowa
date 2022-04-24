@@ -2,19 +2,23 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="634.0" prefWidth="904.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"  fx:controller="com.bank.aplikacja_bankowa.ClientMainPanelController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="649.0" prefWidth="925.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bank.aplikacja_bankowa.ClientMainPanelController">
    <bottom>
       <TabPane prefHeight="520.0" prefWidth="904.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
         <tabs>
@@ -25,23 +29,232 @@
                <content>
                   <ScrollPane prefHeight="200.0" prefWidth="200.0">
                      <content>
-                        <TableView fx:id="operationHistoryTable" prefHeight="391.0" prefWidth="902.0">
-                          <columns>
-                            <TableColumn prefWidth="136.80002439022064" text="Data" />
-                            <TableColumn prefWidth="156.0" text="Typ" />
-                              <TableColumn prefWidth="495.2000427246094" text="Tytuł" />
-                              <TableColumn prefWidth="117.5999755859375" text="Kwota" />
-                          </columns>
-                        </TableView>
+                        <TableView fx:id="operationHistoryTable" prefHeight="383.0" prefWidth="892.0" />
                      </content>
                   </ScrollPane>
                </content>
           </Tab>
           <Tab text="Weź kredyt">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ScrollPane layoutX="275.0" layoutY="91.0" prefHeight="420.0" prefWidth="925.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <content>
+                              <GridPane alignment="CENTER" prefHeight="396.0" prefWidth="904.0" style="-fx-background-color: #d4d4d4;">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="771.2000122070312" minWidth="10.0" prefWidth="120.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="697.6000732421875" minWidth="10.0" prefWidth="697.6000732421875" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="446.4000244140625" minWidth="0.0" prefWidth="120.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="65.0" minHeight="65.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="65.0" minHeight="65.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="65.0" minHeight="65.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="65.0" minHeight="65.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="65.0" minHeight="65.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="65.0" minHeight="65.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="65.0" minHeight="65.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="65.0" minHeight="65.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="65.0" minHeight="65.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="65.0" minHeight="65.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="65.0" minHeight="65.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <AnchorPane prefHeight="69.0" prefWidth="662.0" style="-fx-background-color: #E8E9EB; -fx-background-radius: 20 20 0 0;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <children>
+                                          <TextField fx:id="creditAmount" layoutX="14.0" layoutY="20.0" prefHeight="26.0" prefWidth="660.0" />
+                                          <Label layoutX="14.0" layoutY="5.0" text="Kwota:" />
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane prefHeight="27.0" prefWidth="662.0" style="-fx-background-color: #E8E9EB;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <children>
+                                          <TextField fx:id="installmentsQuantity" layoutX="14.0" layoutY="23.0" prefHeight="26.0" prefWidth="660.0" />
+                                          <Label layoutX="14.0" layoutY="5.0" text="Ilość rat:" />
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane prefHeight="166.0" prefWidth="662.0" style="-fx-background-color: #E8E9EB;" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                       <children>
+                                          <TextField fx:id="bruttoIncome" layoutX="14.0" layoutY="23.0" prefHeight="26.0" prefWidth="660.0" />
+                                          <Label layoutX="14.0" layoutY="5.0" prefHeight="18.0" prefWidth="221.0" text="Dochód BRUTTO:" />
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB;" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                       <children>
+                                          <TextField fx:id="peopleSupported" layoutX="14.0" layoutY="20.0" prefHeight="26.0" prefWidth="660.0" />
+                                          <Label layoutX="14.0" layoutY="5.0" text="Ilość osób utrzymywanych:" />
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                       <children>
+                                          <Label layoutX="14.0" layoutY="13.0" text="Weź kredyt już dziś!">
+                                             <font>
+                                                <Font name="System Bold" size="26.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                       <children>
+                                          <AnchorPane prefHeight="166.4" prefWidth="688.0" style="-fx-background-color: #E8E9EB;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <TextField fx:id="averageExpenses" layoutX="14.0" layoutY="23.0" prefHeight="26.0" prefWidth="660.0" />
+                                                <Label fx:id="expenses" layoutX="14.0" layoutY="5.0" prefHeight="18.0" prefWidth="211.0" text="Średnie wydatki miesięczne:" />
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </AnchorPane>
+                                    <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="10">
+                                       <children>
+                                          <AnchorPane prefHeight="66.0" prefWidth="474.0">
+                                             <children>
+                                                <Button fx:id="creditClearButton" layoutX="112.0" layoutY="7.0" mnemonicParsing="false" onAction="#clearCreditForm" prefHeight="50.0" prefWidth="112.0" style="-fx-background-color: #0269A4;" text="Wyczyść" textFill="#e4e4e4">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                </Button>
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="66.0" prefWidth="489.0">
+                                             <children>
+                                                <Button fx:id="creditQuery" layoutX="120.0" layoutY="7.0" mnemonicParsing="false" onAction="#sendCreditQuery" prefHeight="50.0" prefWidth="112.0" style="-fx-background-color: #0269A4;" text="Prześlij" textFill="#e4e4e4">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                </Button>
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </HBox>
+                                    <AnchorPane prefHeight="166.0" prefWidth="662.0" style="-fx-background-color: #E8E9EB;" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                       <children>
+                                          <TextField fx:id="companyName" layoutX="14.0" layoutY="23.0" prefHeight="26.0" prefWidth="660.0" />
+                                          <Label layoutX="14.0" layoutY="5.0" prefHeight="18.0" prefWidth="221.0" text="Nazwa firmy:" />
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane prefHeight="166.0" prefWidth="662.0" style="-fx-background-color: #E8E9EB; -fx-background-radius: 0 0 20 20;" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                                       <children>
+                                          <TextField fx:id="companyNIP" layoutX="14.0" layoutY="23.0" prefHeight="26.0" prefWidth="660.0" />
+                                          <Label layoutX="14.0" layoutY="5.0" prefHeight="18.0" prefWidth="221.0" text="NIP firmy:" />
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane prefHeight="166.0" prefWidth="662.0" style="-fx-background-color: #E8E9EB;" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                                       <children>
+                                          <TextField fx:id="companyAddress" layoutX="14.0" layoutY="23.0" prefHeight="26.0" prefWidth="660.0" />
+                                          <Label layoutX="14.0" layoutY="5.0" prefHeight="18.0" prefWidth="221.0" text="Adres firmy:" />
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane prefHeight="134.0" prefWidth="694.0" style="-fx-background-color: #E8E9EB;" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                       <children>
+                                          <Label layoutX="14.0" prefHeight="18.0" prefWidth="221.0" text="Typ umowy o pracę:" />
+                                          <ChoiceBox fx:id="typeContract" layoutX="14.0" layoutY="20.0" prefWidth="150.0" />
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </GridPane>
+                           </content>
+                        </ScrollPane>
+                     </children></AnchorPane>
             </content>
           </Tab>
+            <Tab text="Wykonaj przelew">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ScrollPane layoutX="344.0" layoutY="95.0" prefHeight="405.6" prefWidth="904.0" vvalue="1.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <content>
+                              <GridPane alignment="CENTER" prefHeight="396.0" prefWidth="904.0" style="-fx-background-color: #d4d4d4;">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="771.2000122070312" minWidth="10.0" prefWidth="120.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="697.6000732421875" minWidth="10.0" prefWidth="697.6000732421875" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="446.4000244140625" minWidth="0.0" prefWidth="120.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="65.0" minHeight="65.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="65.0" minHeight="65.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="65.0" minHeight="65.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="65.0" minHeight="65.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="65.0" minHeight="65.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="65.0" minHeight="65.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="65.0" minHeight="65.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <AnchorPane prefHeight="69.0" prefWidth="662.0" style="-fx-background-color: #E8E9EB; -fx-background-radius: 20 20 0 0;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <children>
+                                          <TextField fx:id="recipientName" layoutX="14.0" layoutY="20.0" prefHeight="26.0" prefWidth="660.0" />
+                                          <Label layoutX="14.0" layoutY="5.0" text="Nazwa odbiorcy" />
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane prefHeight="27.0" prefWidth="662.0" style="-fx-background-color: #E8E9EB;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <children>
+                                          <TextField fx:id="recipientAddress" layoutX="14.0" layoutY="23.0" prefHeight="26.0" prefWidth="660.0" />
+                                          <Label layoutX="14.0" layoutY="5.0" text="Adres odbiorcy" />
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane prefHeight="166.0" prefWidth="662.0" style="-fx-background-color: #E8E9EB;" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                       <children>
+                                          <TextField fx:id="transferTitle" layoutX="14.0" layoutY="23.0" prefHeight="26.0" prefWidth="660.0" />
+                                          <Label layoutX="14.0" layoutY="5.0" text="Tytuł przelewu" />
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB; -fx-background-radius: 0 0 20 20;" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                       <children>
+                                          <TextField fx:id="transferAmount" layoutX="14.0" layoutY="20.0" prefHeight="26.0" prefWidth="660.0" />
+                                          <Label layoutX="14.0" layoutY="5.0" text="Kwota" />
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                       <children>
+                                          <Label layoutX="14.0" layoutY="13.0" text="Dane do przelewu">
+                                             <font>
+                                                <Font name="System Bold" size="26.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                    <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                       <center>
+                                          <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                             <children>
+                                                <AnchorPane prefHeight="66.0" prefWidth="474.0">
+                                                   <children>
+                                                      <Button fx:id="clearTransferFormButton" layoutX="112.0" layoutY="7.0" mnemonicParsing="false" onAction="#clearTrnasferForm" prefHeight="50.0" prefWidth="112.0" style="-fx-background-color: #0269A4;" text="Wyczyść" textFill="#e4e4e4">
+                                                         <font>
+                                                            <Font name="System Bold" size="14.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="66.0" prefWidth="489.0">
+                                                   <children>
+                                                      <Button fx:id="doTransferButton" layoutX="120.0" layoutY="7.0" mnemonicParsing="false" onAction="#doTransfer" prefHeight="50.0" prefWidth="112.0" style="-fx-background-color: #0269A4;" text="Wykonaj" textFill="#e4e4e4">
+                                                         <font>
+                                                            <Font name="System Bold" size="14.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children>
+                                                </AnchorPane>
+                                             </children>
+                                          </HBox>
+                                       </center>
+                                    </BorderPane>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                       <children>
+                                          <AnchorPane prefHeight="166.4" prefWidth="688.0" style="-fx-background-color: #E8E9EB;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <TextField fx:id="recipientAccountNumber" layoutX="14.0" layoutY="23.0" prefHeight="26.0" prefWidth="660.0" />
+                                                <Label layoutX="14.0" layoutY="5.0" text="Numer Konta" />
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </GridPane>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
         </tabs>
       </TabPane>
    </bottom>
@@ -65,7 +278,14 @@
                   </Label>
                   <Text fx:id="name" layoutX="51.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" />
                   <Text fx:id="surname" layoutX="76.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" />
-                  <Button fx:id="logoutButton" layoutX="72.0" layoutY="127.0" mnemonicParsing="false" onAction="#logout" prefHeight="58.0" prefWidth="106.0" style="-fx-background-color: #0269A4;" text="Wyloguj" textFill="WHITE">
+                  <Button fx:id="logoutButton" layoutX="153.0" layoutY="116.0" mnemonicParsing="false" onAction="#logout" prefHeight="70.0" prefWidth="108.0" style="-fx-background-color: #0269A4;" text="Wyloguj" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="11.0" layoutY="83.0" text="Numer konta:" />
+                  <Text fx:id="accountNumber" layoutX="84.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <Button fx:id="copyAccountNumberButton" layoutX="22.0" layoutY="116.0" mnemonicParsing="false" onAction="#copyAccountNumber" prefHeight="70.0" prefWidth="108.0" style="-fx-background-color: #0269A4;" text="Skopiuj numer &#10;konta" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>

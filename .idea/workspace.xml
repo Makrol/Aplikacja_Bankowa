@@ -4,26 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1d28b12-cd6a-41b0-b3b4-2c11768a6015" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/ClientMainPanelController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/UserFileNameTab.java" afterDir="false" />
+    <list default="true" id="a1d28b12-cd6a-41b0-b3b4-2c11768a6015" name="Changes" comment="Logging in to different accounts and adding new employees and clients of the bank via a bank employee account">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/Bank.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/CreditQuery.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/Transfer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplikacja-Bankowa/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplikacja_Bankowa/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aplikacja_Bankowa/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/AdminMainPanelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/AdminMainPanelController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/ClientMainPanelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/ClientMainPanelController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/LogInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/LogInController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/ScreenController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/SerializeFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/SerializeFunctions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/bank/aplikacja_bankowa/admin.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/UserFileNameTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/UserFileNameTab.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/bank/aplikacja_bankowa/adminMainPanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/bank/aplikacja_bankowa/adminMainPanel.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/bank/aplikacja_bankowa/user.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/bank/aplikacja_bankowa/loginWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/bank/aplikacja_bankowa/loginWindow.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/bank/aplikacja_bankowa/userMainPanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/bank/aplikacja_bankowa/userMainPanel.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/loginData.data" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/loginData.data" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/u0.data" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/u0.data" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/u1.data" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/u1.data" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +60,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/com/bank/aplikacja_bankowa/hello-view.fxml" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -127,8 +126,24 @@
       <workItem from="1649259080631" duration="7730000" />
       <workItem from="1649363078321" duration="351000" />
       <workItem from="1649610058680" duration="9000" />
-      <workItem from="1649777806493" duration="6546000" />
+      <workItem from="1649777806493" duration="7003000" />
+      <workItem from="1649798323746" duration="1539000" />
+      <workItem from="1649863794024" duration="2942000" />
+      <workItem from="1649916278910" duration="4000" />
+      <workItem from="1649917998063" duration="3052000" />
+      <workItem from="1650530295206" duration="2400000" />
+      <workItem from="1650783896568" duration="1648000" />
+      <workItem from="1650786151260" duration="8899000" />
+      <workItem from="1650796550592" duration="5661000" />
     </task>
+    <task id="LOCAL-00001" summary="Logging in to different accounts and adding new employees and clients of the bank via a bank employee account">
+      <created>1649786305424</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1649786305424</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,5 +159,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Logging in to different accounts and adding new employees and clients of the bank via a bank employee account" />
+    <option name="LAST_COMMIT_MESSAGE" value="Logging in to different accounts and adding new employees and clients of the bank via a bank employee account" />
   </component>
 </project>

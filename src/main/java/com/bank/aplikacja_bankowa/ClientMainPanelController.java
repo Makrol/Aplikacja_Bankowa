@@ -3,10 +3,12 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
+import javafx.scene.layout.Region;
 import javafx.scene.text.Text;
 
 import java.io.IOException;
@@ -14,6 +16,7 @@ import java.time.LocalDate;
 
 public class ClientMainPanelController {
 
+    static public Transfer currentSelectedTransfer;
     @FXML
     private Label currency;
 
@@ -46,6 +49,12 @@ public class ClientMainPanelController {
 
     @FXML
     private TextField transferTitle;
+
+    @FXML
+    private TextField recipientAddress;
+
+    @FXML
+    private TextField recipientName;
 
     @FXML
     private ChoiceBox<String> typeContract;
@@ -88,13 +97,27 @@ public class ClientMainPanelController {
 
         }
         else{
+            Client source = (Client)Main.currentUser;
+            Client destination = (Client) SerializeFunctions.deSerializeObjectFromFile("src/main/resources/data/"+recipientFileName+".data");
+            saveTransferData(Transfer.Type.OUTGOING,transferTitle.getText(),Double.parseDouble(transferAmount.getText()),
+                    source.getAccountNumber(),
+                    source.getStreet()+" "+source.getBuildingNumber()+"/"+source.getFlatNumber()+" "+source.getZipCode()+" "+source.getCity(),
+                    source.getSurname()+" "+source.getName(),
+                    destination.getAccountNumber(),
+                    recipientAddress.getText(),
+                    recipientName.getText());
 
-            saveTransferData(Transfer.Type.OUTGOING,transferTitle.getText(),Double.parseDouble(transferAmount.getText()));
-            Client client = (Client) SerializeFunctions.deSerializeObjectFromFile("src/main/resources/data/"+recipientFileName+".data");
-            client.getTransfers().add(new Transfer(LocalDate.now(), Transfer.Type.INCOMING,transferTitle.getText(),Double.parseDouble(transferAmount.getText())));
+            destination.getTransfers().add(new Transfer(LocalDate.now(), Transfer.Type.INCOMING,transferTitle.getText(),Double.parseDouble(transferAmount.getText()),
+                        source.getAccountNumber(),
+                        source.getStreet()+" "+source.getBuildingNumber()+"/"+source.getFlatNumber()+" "+source.getZipCode()+" "+source.getCity(),
+                        source.getSurname()+" "+source.getName(),
+                        destination.getAccountNumber(),
+                        recipientAddress.getText(),
+                        recipientName.getText()
+                    ));
 
-            client.setMoney(client.getMoney()+Double.parseDouble(transferAmount.getText()));
-            SerializeFunctions.serializeObjectToFile(client,"src/main/resources/data/"+recipientFileName+".data");
+            destination.setMoney(destination.getMoney()+Double.parseDouble(transferAmount.getText()));
+            SerializeFunctions.serializeObjectToFile(destination,"src/main/resources/data/"+recipientFileName+".data");
 
             ((Client)Main.currentUser).changeMoney(-Double.parseDouble(transferAmount.getText()));
 
@@ -120,8 +143,10 @@ public class ClientMainPanelController {
         content.putString(accountNumber.getText());
         clipboard.setContent(content);
     }
-    void saveTransferData(Transfer.Type type, String description, Double amount){
-        Transfer transfer = new Transfer(LocalDate.now(),type,description,amount);
+    void saveTransferData(Transfer.Type type, String description, Double amount,String sourceAccountNumber, String sourceAddress,
+                          String sourceName, String destinationAccountNumber, String destinationAddress,
+                          String destinationName){
+        Transfer transfer = new Transfer(LocalDate.now(),type,description,amount,sourceAccountNumber,sourceAddress,sourceName,destinationAccountNumber,destinationAddress,destinationName);
 
         addTransferToHistoryTable(transfer);
         ((Client)Main.currentUser).getTransfers().add(transfer);
@@ -141,20 +166,34 @@ public class ClientMainPanelController {
     void initColumns(){
         dateColumn = new TableColumn<>("Data");
         dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
+        dateColumn.setPrefWidth(100);
 
         typeColumn = new TableColumn<>("Typ");
         typeColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
+        typeColumn.setPrefWidth(150);
 
         descriptionColumn = new TableColumn<>("Tytuł");
         descriptionColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
+        descriptionColumn.setPrefWidth(550);
 
         amountColumn = new TableColumn<>("Kwota");
         amountColumn.setCellValueFactory(new PropertyValueFactory<>("amount"));
+        amountColumn.setPrefWidth(100);
 
         operationHistoryTable.getColumns().add(dateColumn);
         operationHistoryTable.getColumns().add(typeColumn);
         operationHistoryTable.getColumns().add(descriptionColumn);
         operationHistoryTable.getColumns().add(amountColumn);
+
+        operationHistoryTable.setRowFactory(tv->{
+            TableRow<Transfer> row = new TableRow<>();
+            row.setOnMouseClicked(event->{
+                if(event.getClickCount()==2 && (!row.isEmpty())){
+                    showTransferDetails(row.getItem());
+                }
+            });
+            return row;
+        });
     }
     void readUserTransfers(){
        for(Transfer t:((Client)Main.currentUser).getTransfers()){
@@ -168,6 +207,25 @@ public class ClientMainPanelController {
         typeContract.getItems().add("Na czas nieokreślony");
 
         typeContract.setValue("Brak");
+
+    }
+    void showTransferDetails(Transfer transfer){
+        currentSelectedTransfer = transfer;
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("transferDetails.fxml"));
+
+        Dialog dialog = new Dialog<>();
+
+
+        try {
+            dialog.setDialogPane(loader.load());
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+        TransferDetailsDialogController.setDialog(dialog);
+        dialog.showAndWait();
+
+
     }
 }
 

@@ -52,4 +52,30 @@ public class Client extends Person{
     public ArrayList<Transfer> getTransfers() {
         return transfers;
     }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getStreet() {
+        return street;
+    }
+
+    public String getBuildingNumber() {
+        return buildingNumber;
+    }
+
+    public String getFlatNumber() {
+        return flatNumber;
+    }
+
+    public String getZipCode() {
+        return zipCode;
+    }
+    public String getName(){
+        return super.name;
+    }
+    public String getSurname(){
+        return super.surname;
+    }
 }

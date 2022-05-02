@@ -59,6 +59,31 @@ public class ClientMainPanelController {
     @FXML
     private ChoiceBox<String> typeContract;
 
+    @FXML
+    private TextField creditAmount;
+
+    @FXML
+    private TextField installmentsQuantity;
+
+    @FXML
+    private TextField bruttoIncome;
+
+    @FXML
+    private TextField peopleSupported;
+
+    @FXML
+    private TextField averageExpenses;
+
+    @FXML
+    private TextField companyName;
+
+    @FXML
+    private TextField companyNIP;
+
+    @FXML
+    private TextField companyAddress;
+
+
 
     private TableColumn<Transfer,String> dateColumn;
     private TableColumn<Transfer,String> typeColumn;
@@ -136,6 +161,7 @@ public class ClientMainPanelController {
     void clearTrnasferForm(ActionEvent event) {
 
     }
+
     @FXML
     void copyAccountNumber(ActionEvent event){
         ClipboardContent content = new ClipboardContent();
@@ -208,6 +234,8 @@ public class ClientMainPanelController {
 
         typeContract.setValue("Brak");
 
+
+
     }
     void showTransferDetails(Transfer transfer){
         currentSelectedTransfer = transfer;
@@ -227,5 +255,6 @@ public class ClientMainPanelController {
 
 
     }
+
 }
 

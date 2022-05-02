@@ -1,10 +1,9 @@
 package com.bank.aplikacja_bankowa;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
 
 import java.io.IOException;
@@ -113,8 +112,19 @@ public class AdminMainPanelController {
     private Button logoutButton;
 
     @FXML
+    private TableView creditTable;
+
+    private TableColumn<CreditQuery,String> creditDateColumn;
+    private TableColumn<CreditQuery,String> creditAccountNumberColumn;
+    private TableColumn<CreditQuery,String> creditAmount;
+
+    static public CreditQuery currentSelectedCreditQuery;
+
+    @FXML
     public void initialize(){
         validate();
+        init_table();
+        readCreditQuery();
        // personName.setText(Main.currentUser.name);
        // personSurname.setText(Main.currentUser.surname);
 

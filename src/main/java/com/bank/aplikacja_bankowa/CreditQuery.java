@@ -1,13 +1,15 @@
 package com.bank.aplikacja_bankowa;
 
-public class CreditQuery {
-    public static enum TypeContract {NULL,TRIAL,LIMITED_PERIOD,INDEFINITE_PERIOD};
+import java.io.Serializable;
+import java.time.LocalDate;
+
+public class CreditQuery implements Serializable {
      private Double amount;
      private Integer installmentsQuantity;
      private Double bruttoIncome;
      private Double averageExpenses;
      private Integer peopleSupported;
-     private TypeContract contractType;
+     private String contractType;
      private String companyName;
      private String companyAddress;
      private String companyNIP;
@@ -44,7 +46,7 @@ public class CreditQuery {
         return peopleSupported;
     }
 
-    public TypeContract getContractType() {
+    public String getContractType() {
         return contractType;
     }
 

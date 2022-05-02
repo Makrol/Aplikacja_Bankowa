@@ -1,10 +1,8 @@
 package com.bank.aplikacja_bankowa;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
-
 public class TransferDetailsDialogController {
 
     static private Dialog transferDetailsDialog;
@@ -51,6 +49,11 @@ public class TransferDetailsDialogController {
 
     static public void setDialog(Dialog dialog) {
         transferDetailsDialog = dialog;
+
+    }
+    @FXML
+    void printTransfer(ActionEvent event){
+
 
     }
 }

@@ -12,10 +12,12 @@ public class Main extends Application {
     public static UserFileNameTab userFileNameTab;// = new UserFileNameTab();
     public static Person currentUser;
     public static Bank bankData;
-
+    public static CreditData creditData;
     @Override
     public void start(Stage stage) throws IOException,ClassNotFoundException {
        // bankData = new Bank();
+        //SerializeFunctions.serializeObjectToFile(new CreditData(),"src/main/resources/data/creditData.data");
+        creditData = (CreditData)SerializeFunctions.deSerializeObjectFromFile("src/main/resources/data/creditData.data");
         bankData = (Bank)SerializeFunctions.deSerializeObjectFromFile("src/main/resources/data/bankData.data");
         userFileNameTab = (UserFileNameTab) SerializeFunctions.deSerializeObjectFromFile("src/main/resources/data/loginData.data");
         mainStage = stage;

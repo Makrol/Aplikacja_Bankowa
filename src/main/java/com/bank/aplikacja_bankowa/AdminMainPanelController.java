@@ -129,7 +129,53 @@ public class AdminMainPanelController {
        // personSurname.setText(Main.currentUser.surname);
 
     }
+    public void init_table(){
+        creditDateColumn = new TableColumn<>("Data");
+        creditDateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
+        creditDateColumn.setPrefWidth(100);
 
+        creditAccountNumberColumn = new TableColumn<>("Numer Konta");
+        creditAccountNumberColumn.setCellValueFactory(new PropertyValueFactory<>("accountNumber"));
+        creditAccountNumberColumn.setPrefWidth(400);
+
+        creditAmount = new TableColumn<>("Kwota");
+        creditAmount.setCellValueFactory(new PropertyValueFactory<>("amount"));
+        creditAmount.setPrefWidth(200);
+
+        creditTable.getColumns().add(creditDateColumn);
+        creditTable.getColumns().add(creditAccountNumberColumn);
+        creditTable.getColumns().add(creditAmount);
+
+        creditTable.setRowFactory(tv->{
+            TableRow<CreditQuery> row = new TableRow<>();
+            row.setOnMouseClicked(event->{
+                if(event.getClickCount()==2 && (!row.isEmpty())){
+                    showCreditDetails(row.getItem());
+                }
+            });
+            return row;
+        });
+    }
+    private void showCreditDetails(CreditQuery creditQuery){
+        currentSelectedCreditQuery= creditQuery;
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("creditDetails.fxml"));
+
+        Dialog dialog = new Dialog<>();
+
+        try {
+            dialog.setDialogPane(loader.load());
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+        CreditDetailsDialogController.setDialog(dialog);
+        dialog.showAndWait();
+    }
+    void readCreditQuery(){
+        for(CreditQuery cQ:Main.creditData.getCreditDataContainer()) {
+            creditTable.getItems().add(cQ);
+        }
+    }
     @FXML
     void addClient(ActionEvent event) throws IOException{
         String accountNumber = Main.bankData.generateAccountNumber();

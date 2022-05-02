@@ -152,13 +152,13 @@ public class ClientMainPanelController {
 
             money.setText(new String(String.valueOf((Double.parseDouble(money.getText())-Double.parseDouble(transferAmount.getText())))));
 
-            ;
+
         }
 
 
     }
     @FXML
-    void clearTrnasferForm(ActionEvent event) {
+    void clearTransferForm(ActionEvent event) {
 
     }
 
@@ -186,8 +186,10 @@ public class ClientMainPanelController {
 
     }
     @FXML
-    void sendCreditQuery(ActionEvent event){
-        //CreditQuery creditQuery = new CreditQuery();
+    void sendCreditQuery(ActionEvent event)throws IOException{
+        CreditQuery creditQuery = new CreditQuery(Double.parseDouble(creditAmount.getText()),Integer.parseInt(installmentsQuantity.getText()),Double.parseDouble(bruttoIncome.getText()),Integer.parseInt(peopleSupported.getText()),Double.parseDouble(averageExpenses.getText()),typeContract.getValue(),companyName.getText(),companyNIP.getText(),companyAddress.getText(),((Client)Main.currentUser).getAccountNumber());
+        Main.creditData.addCreditQuery(creditQuery);
+        SerializeFunctions.serializeObjectToFile(Main.creditData,"src/main/resources/data/creditData.data");
     }
     void initColumns(){
         dateColumn = new TableColumn<>("Data");

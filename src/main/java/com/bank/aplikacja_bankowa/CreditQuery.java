@@ -14,10 +14,11 @@ public class CreditQuery implements Serializable {
      private String companyAddress;
      private String companyNIP;
      private String accountNumber;
+     private Double creditWorthiness;
 
      private String date;
 
-    public CreditQuery(Double amount, Integer installmentsQuantity, Double bruttoIncome,Integer peopleSupported, Double averageExpenses , String contractType, String companyName, String companyNIP,String companyAddress, String accountNumber) {
+    public CreditQuery(Double amount, Integer installmentsQuantity, Double bruttoIncome,Integer peopleSupported, Double averageExpenses , String contractType, String companyName, String companyNIP,String companyAddress, String accountNumber, Double creditWorthiness) {
         this.amount = amount;
         this.installmentsQuantity = installmentsQuantity;
         this.bruttoIncome = bruttoIncome;
@@ -28,7 +29,9 @@ public class CreditQuery implements Serializable {
         this.companyAddress = companyAddress;
         this.companyNIP = companyNIP;
         this.accountNumber = accountNumber;
+        this.creditWorthiness = creditWorthiness;
         date = LocalDate.now().toString();
+
     }
 
     public Double getAmount() {
@@ -66,6 +69,8 @@ public class CreditQuery implements Serializable {
     public String getCompanyNIP() {return companyNIP;}
 
     public String getAccountNumber() {return accountNumber;}
+
+    public Double getCreditWorthiness() {return creditWorthiness;}
 
     public String getDate() {
         return date;

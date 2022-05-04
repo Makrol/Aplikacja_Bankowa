@@ -130,6 +130,7 @@ public class AdminMainPanelController {
 
 
     static public CreditQuery currentSelectedCreditQuery;
+    static public Client currentSelectedClient;
 
     @FXML
     public void initialize()throws IOException,ClassNotFoundException{

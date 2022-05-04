@@ -200,6 +200,7 @@ public class ClientMainPanelController {
         CreditQuery creditQuery = new CreditQuery(Double.parseDouble(creditAmount.getText()),Integer.parseInt(installmentsQuantity.getText()),Double.parseDouble(bruttoIncome.getText()),Integer.parseInt(peopleSupported.getText()),Double.parseDouble(averageExpenses.getText()),typeContract.getValue(),companyName.getText(),companyNIP.getText(),companyAddress.getText(),((Client)Main.currentUser).getAccountNumber(),creditWorthiness);
         Main.creditData.addCreditQuery(creditQuery);
         SerializeFunctions.serializeObjectToFile(Main.creditData,"src/main/resources/data/creditData.data");
+        clearCreditForm(new ActionEvent());
     }
     void initColumns(){
         dateColumn = new TableColumn<>("Data");

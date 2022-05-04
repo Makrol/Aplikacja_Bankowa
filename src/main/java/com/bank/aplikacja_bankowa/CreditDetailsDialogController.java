@@ -62,7 +62,7 @@ public class CreditDetailsDialogController {
         companyAddress.setText(creditQuery.getCompanyAddress());
         companyNIP.setText(creditQuery.getCompanyNIP());
         accountNumber.setText(creditQuery.getAccountNumber());
-        creditStanding.setText("Jebudubu");
+        creditStanding.setText(creditQuery.getCreditWorthiness().toString());
     }
 
 

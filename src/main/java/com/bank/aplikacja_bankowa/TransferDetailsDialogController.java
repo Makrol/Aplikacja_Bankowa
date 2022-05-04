@@ -47,7 +47,7 @@ public class TransferDetailsDialogController {
     }
     public void setTransferData(){
         Transfer transfer = ClientMainPanelController.currentSelectedTransfer;
-        date.setText(transfer.getTitle());
+        date.setText(transfer.getDate());
         type.setText(transfer.getType());
         amount.setText(transfer.getAmount());
         title.setText(transfer.getTitle());

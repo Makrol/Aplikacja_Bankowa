@@ -34,12 +34,10 @@ javafx {
 }
 
 dependencies {
-    implementation 'org.apache.pdfbox:pdfbox:3.0.0-RC1'
     implementation('org.controlsfx:controlsfx:11.1.0')
-
+    implementation ('org.apache.pdfbox:pdfbox:2.0.20')
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
-    // https://mvnrepository.com/artifact/org.apache.pdfbox/pdfbox
 
 }
 

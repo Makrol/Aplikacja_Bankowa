@@ -79,4 +79,38 @@ public class Client extends Person{
         return super.surname;
     }
 
+    public String getPesel() {
+        return pesel;
+    }
+
+    public String getCountryOfBirth() {
+        return countryOfBirth;
+    }
+
+    public String getMotherMaidenSurname() {
+        return motherMaidenSurname;
+    }
+
+    public String getPlaceOfBirth() {
+        return placeOfBirth;
+    }
+
+    public LocalDate getIdExpirationDate() {
+        return idExpirationDate;
+    }
+
+    public String getIdNumber() {
+        return idNumber;
+    }
+
+    public String getPhoneNumber(){
+        return super.phoneNumber;
+    }
+
+    public String getEmailAddress(){ return super.email; }
+
+    public String getCitizenship(){
+        return super.citizenship;
+    }
+    public String getDateOfBirth(){ return super.dateOfBirth.toString(); }
 }

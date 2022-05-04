@@ -76,11 +76,4 @@ public class CreditDetailsDialogController {
         CreditDetailsDialog = dialog;
 
     }
-
-    private Double calculateCreditStanding(CreditQuery creditQuery){
-        //x=ilosc rat;
-        //y=dochod;
-        //wynik=x*0.3y
-        return 0.d;
-    }
 }

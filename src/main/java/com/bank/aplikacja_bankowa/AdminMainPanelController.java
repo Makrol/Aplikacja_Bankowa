@@ -118,18 +118,31 @@ public class AdminMainPanelController {
     private TableColumn<CreditQuery,String> creditAccountNumberColumn;
     private TableColumn<CreditQuery,String> creditAmount;
 
+    @FXML
+    private TableView clientsTable;
+
+    private TableColumn<Client,String> surnameColumn;
+
+    private TableColumn<Client,String> nameColumn;
+
+    private TableColumn<Client,String> accountNumberColumn;
+
+
+
     static public CreditQuery currentSelectedCreditQuery;
 
     @FXML
-    public void initialize(){
+    public void initialize()throws IOException,ClassNotFoundException{
         validate();
-        init_table();
+        initCreditTable();
+        initClientTable();
         readCreditQuery();
-       // personName.setText(Main.currentUser.name);
-       // personSurname.setText(Main.currentUser.surname);
+        readClientsList();
+        personName.setText(Main.currentUser.name);
+        personSurname.setText(Main.currentUser.surname);
 
     }
-    public void init_table(){
+    public void initCreditTable(){
         creditDateColumn = new TableColumn<>("Data");
         creditDateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
         creditDateColumn.setPrefWidth(100);
@@ -156,6 +169,52 @@ public class AdminMainPanelController {
             return row;
         });
     }
+    private void initClientTable(){
+        surnameColumn = new TableColumn<>("Nazwisko");
+        surnameColumn.setCellValueFactory(new PropertyValueFactory<>("surname"));
+        surnameColumn.setPrefWidth(150);
+
+        nameColumn = new TableColumn<>("Imie");
+        nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        nameColumn.setPrefWidth(150);
+
+        accountNumberColumn = new TableColumn<>("Numer konta");
+        accountNumberColumn.setCellValueFactory(new PropertyValueFactory<>("accountNumber"));
+        accountNumberColumn.setPrefWidth(300);
+
+
+        clientsTable.getColumns().add(surnameColumn);
+        clientsTable.getColumns().add(nameColumn);
+        clientsTable.getColumns().add(accountNumberColumn);
+
+        clientsTable.setRowFactory(tv->{
+            TableRow<Client> row = new TableRow<>();
+            row.setOnMouseClicked(event->{
+                if(event.getClickCount()==2 && (!row.isEmpty())){
+                    showClientDetails(row.getItem());
+                }
+            });
+            return row;
+        });
+
+    }
+    private void showClientDetails(Client client){
+        currentSelectedClient= client;
+        ClientDetailsDialogController.setCurrentClient(currentSelectedClient);
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("clientDetails.fxml"));
+
+        Dialog dialog = new Dialog<>();
+
+        try {
+            dialog.setDialogPane(loader.load());
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+        ClientDetailsDialogController.setDialog(dialog);
+        dialog.showAndWait();
+    }
+
     private void showCreditDetails(CreditQuery creditQuery){
         currentSelectedCreditQuery= creditQuery;
 
@@ -174,6 +233,12 @@ public class AdminMainPanelController {
     void readCreditQuery(){
         for(CreditQuery cQ:Main.creditData.getCreditDataContainer()) {
             creditTable.getItems().add(cQ);
+        }
+    }
+    void readClientsList() throws ClassNotFoundException,IOException{
+        for (String value : Main.userFileNameTab.accountNumberFile.values()) {
+            clientsTable.getItems().add(SerializeFunctions.deSerializeObjectFromFile("src/main/resources/data/"+value+".data"));
+
         }
     }
     @FXML
@@ -203,6 +268,7 @@ public class AdminMainPanelController {
                 accountNumber
         );
         SerializeFunctions.serializePerson(client,clientUsername.getText(),clientPassword.getText(),accountNumber);
+        clearClientForm(new ActionEvent());
         //String clientFileName = Main.userFileNameTab.findUserFileByLogin(clientUsername.getText());
        // Main.userFileNameTab.addNewAccountNumber(accountNumber,clientFileName);
     }
@@ -220,6 +286,7 @@ public class AdminMainPanelController {
         );
 
        SerializeFunctions.serializePerson(employee,employeeUsername.getText(),employeePassword.getText());
+       clearEmployeeForm(new ActionEvent());
     }
 
     @FXML

@@ -4,32 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1d28b12-cd6a-41b0-b3b4-2c11768a6015" name="Changes" comment="The possibility of submitting loan applications and viewing applications by bank employees">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/CreditData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/CreditDetailsDialogController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/bank/aplikacja_bankowa/adminMainPanel-nop.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/bank/aplikacja_bankowa/creditDetails.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/bank/aplikacja_bankowa/transferDetails(2).fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/bank/aplikacja_bankowa/transferDetails-nop.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/data/creditData.data" afterDir="false" />
+    <list default="true" id="a1d28b12-cd6a-41b0-b3b4-2c11768a6015" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/ClientDetailsDialogController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/AdminMainPanelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/AdminMainPanelController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/ClientMainPanelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/ClientMainPanelController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/CreditQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/CreditQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/CreditDetailsDialogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/CreditDetailsDialogController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/TransferDetailsDialogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/TransferDetailsDialogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/UserFileNameTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/UserFileNameTab.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/bank/aplikacja_bankowa/adminMainPanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/bank/aplikacja_bankowa/adminMainPanel.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/bank/aplikacja_bankowa/transferDetails.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/bank/aplikacja_bankowa/transferDetails.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/bankData.data" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/bankData.data" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/creditData.data" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/creditData.data" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/loginData.data" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/loginData.data" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/u0.data" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/u0.data" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/data/u1.data" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/u1.data" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/data/u2.data" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/u2.data" afterDir="false" />
     </list>
+    <list id="729d9ae5-4a77-4de4-9922-925e5a56001f" name="Changes by Admin" comment="" />
     <list id="4e3f5938-1ff3-4963-96b5-dc732b4d58a9" name="Changes by Gonzur" comment="The possibility of submitting loan applications and viewing applications by bank employees">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/AdminMainPanelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/AdminMainPanelController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/ClientMainPanelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/ClientMainPanelController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/CreditDetailsDialogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/CreditDetailsDialogController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/CreditQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/CreditQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/bank/aplikacja_bankowa/userMainPanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/bank/aplikacja_bankowa/userMainPanel.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/TransferDetailsDialogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/TransferDetailsDialogController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,33 +55,36 @@
   <component name="LineStatusTrackerManager">
     <file path="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/AdminMainPanelController.java">
       <ranges>
-        <range start1="3" end1="7" start2="3" end2="6" changelist="a1d28b12-cd6a-41b0-b3b4-2c11768a6015" />
-        <range start1="115" end1="115" start2="114" end2="123" changelist="a1d28b12-cd6a-41b0-b3b4-2c11768a6015" />
-        <range start1="117" end1="117" start2="125" end2="127" changelist="a1d28b12-cd6a-41b0-b3b4-2c11768a6015" />
-        <range start1="121" end1="121" start2="131" end2="160" changelist="4e3f5938-1ff3-4963-96b5-dc732b4d58a9" />
-        <range start1="122" end1="122" start2="161" end2="178" changelist="4e3f5938-1ff3-4963-96b5-dc732b4d58a9" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/CreditQuery.java">
-      <ranges>
-        <range start1="2" end1="4" start2="2" end2="6" changelist="a1d28b12-cd6a-41b0-b3b4-2c11768a6015" />
-        <range start1="9" end1="10" start2="11" end2="12" changelist="a1d28b12-cd6a-41b0-b3b4-2c11768a6015" />
-        <range start1="13" end1="13" start2="15" end2="16" changelist="4e3f5938-1ff3-4963-96b5-dc732b4d58a9" />
-        <range start1="14" end1="15" start2="17" end2="20" changelist="4e3f5938-1ff3-4963-96b5-dc732b4d58a9" />
-        <range start1="24" end1="24" start2="29" end2="31" changelist="4e3f5938-1ff3-4963-96b5-dc732b4d58a9" />
-        <range start1="46" end1="47" start2="53" end2="54" changelist="a1d28b12-cd6a-41b0-b3b4-2c11768a6015" />
-        <range start1="58" end1="60" start2="65" end2="71" changelist="4e3f5938-1ff3-4963-96b5-dc732b4d58a9" />
+        <range start1="120" end1="120" start2="120" end2="131" changelist="a1d28b12-cd6a-41b0-b3b4-2c11768a6015" />
+        <range start1="121" end1="121" start2="132" end2="133" changelist="4e3f5938-1ff3-4963-96b5-dc732b4d58a9" />
+        <range start1="123" end1="124" start2="135" end2="136" changelist="a1d28b12-cd6a-41b0-b3b4-2c11768a6015" />
+        <range start1="125" end1="126" start2="137" end2="139" changelist="a1d28b12-cd6a-41b0-b3b4-2c11768a6015" />
+        <range start1="127" end1="129" start2="140" end2="143" changelist="a1d28b12-cd6a-41b0-b3b4-2c11768a6015" />
+        <range start1="131" end1="132" start2="145" end2="146" changelist="a1d28b12-cd6a-41b0-b3b4-2c11768a6015" />
+        <range start1="158" end1="158" start2="172" end2="218" changelist="a1d28b12-cd6a-41b0-b3b4-2c11768a6015" />
+        <range start1="178" end1="178" start2="238" end2="244" changelist="a1d28b12-cd6a-41b0-b3b4-2c11768a6015" />
+        <range start1="205" end1="205" start2="271" end2="272" changelist="a1d28b12-cd6a-41b0-b3b4-2c11768a6015" />
+        <range start1="222" end1="222" start2="289" end2="290" changelist="a1d28b12-cd6a-41b0-b3b4-2c11768a6015" />
       </ranges>
     </file>
     <file path="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/ClientMainPanelController.java">
       <ranges>
-        <range start1="61" end1="61" start2="61" end2="86" changelist="a1d28b12-cd6a-41b0-b3b4-2c11768a6015" />
-        <range start1="129" end1="130" start2="154" end2="155" changelist="4e3f5938-1ff3-4963-96b5-dc732b4d58a9" />
-        <range start1="135" end1="136" start2="160" end2="161" changelist="4e3f5938-1ff3-4963-96b5-dc732b4d58a9" />
-        <range start1="138" end1="138" start2="163" end2="164" changelist="a1d28b12-cd6a-41b0-b3b4-2c11768a6015" />
-        <range start1="162" end1="164" start2="188" end2="192" changelist="4e3f5938-1ff3-4963-96b5-dc732b4d58a9" />
-        <range start1="209" end1="209" start2="237" end2="239" changelist="a1d28b12-cd6a-41b0-b3b4-2c11768a6015" />
-        <range start1="229" end1="229" start2="259" end2="260" changelist="a1d28b12-cd6a-41b0-b3b4-2c11768a6015" />
+        <range start1="185" end1="186" start2="185" end2="194" changelist="a1d28b12-cd6a-41b0-b3b4-2c11768a6015" />
+        <range start1="189" end1="190" start2="197" end2="200" changelist="a1d28b12-cd6a-41b0-b3b4-2c11768a6015" />
+        <range start1="192" end1="192" start2="202" end2="203" changelist="4e3f5938-1ff3-4963-96b5-dc732b4d58a9" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/TransferDetailsDialogController.java">
+      <ranges>
+        <range start1="5" end1="5" start2="5" end2="19" changelist="a1d28b12-cd6a-41b0-b3b4-2c11768a6015" />
+        <range start1="35" end1="36" start2="49" end2="50" changelist="4e3f5938-1ff3-4963-96b5-dc732b4d58a9" />
+        <range start1="54" end1="55" start2="68" end2="178" changelist="a1d28b12-cd6a-41b0-b3b4-2c11768a6015" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/main/java/com/bank/aplikacja_bankowa/CreditDetailsDialogController.java">
+      <ranges>
+        <range start1="64" end1="65" start2="64" end2="65" changelist="4e3f5938-1ff3-4963-96b5-dc732b4d58a9" />
+        <range start1="78" end1="85" start2="78" end2="78" changelist="a1d28b12-cd6a-41b0-b3b4-2c11768a6015" />
       </ranges>
     </file>
   </component>
@@ -106,7 +109,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "C:/Users/karol/Downloads/xmpbox-3.0.0-alpha2.jar",
-    "project.structure.last.edited": "SDKs",
+    "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.34344336"
   }
@@ -116,8 +119,8 @@
       <recent name="C:\Users\karol\OneDrive\studia_semestr_4\Programowanie_obiektowe_Java\mikro projekt\Aplikacja Bankowa\src\main\resources\com\bank\aplikacja_bankowa" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="BankApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.com.bank.aplikacja_bankowa.Main">
+    <configuration name="com.bank.aplikacja_bankowa.BankApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.bank.aplikacja_bankowa.BankApp" />
       <module name="Aplikacja_Bankowa.main" />
       <extension name="coverage">
@@ -130,7 +133,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="com.bank.aplikacja_bankowa.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.bank.aplikacja_bankowa.Main" />
       <module name="Aplikacja_Bankowa.main" />
       <extension name="coverage">
@@ -145,8 +148,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.BankApp" />
+        <item itemvalue="Application.com.bank.aplikacja_bankowa.Main" />
+        <item itemvalue="Application.com.bank.aplikacja_bankowa.BankApp" />
       </list>
     </recent_temporary>
   </component>
@@ -186,6 +189,9 @@
       <workItem from="1651174986532" duration="231000" />
       <workItem from="1651501923889" duration="6341000" />
       <workItem from="1651510546220" duration="6597000" />
+      <workItem from="1651519197631" duration="81000" />
+      <workItem from="1651675364837" duration="1139000" />
+      <workItem from="1651681233436" duration="16425000" />
     </task>
     <task id="LOCAL-00001" summary="Logging in to different accounts and adding new employees and clients of the bank via a bank employee account">
       <created>1649786305424</created>
@@ -215,7 +221,21 @@
       <option name="project" value="LOCAL" />
       <updated>1651175173477</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="The possibility of submitting loan applications and viewing applications by bank employees">
+      <created>1651519247448</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1651519247448</updated>
+    </task>
+    <task id="LOCAL-00006" summary="The possibility of submitting loan applications and viewing applications by bank employees">
+      <created>1651519267914</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1651519267914</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

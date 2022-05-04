@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<DialogPane prefHeight="492.0" prefWidth="610.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bank.aplikacja_bankowa.ClientDetailsDialogController">
+   <header>
+      <AnchorPane prefHeight="55.0" prefWidth="600.0">
+         <children>
+            <Label layoutX="210.0" layoutY="11.0" text="Informacje o kliencie">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </header>
+   <content>
+      <AnchorPane prefHeight="459.0" prefWidth="645.0">
+         <children>
+            <GridPane prefHeight="408.0" prefWidth="610.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="20.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="505.0" minWidth="10.0" prefWidth="505.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="197.0" minWidth="0.0" prefWidth="20.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="318.0" minHeight="10.0" prefHeight="318.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="199.0" minHeight="10.0" prefHeight="90.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <children>
+                        <Button fx:id="historyOfTransfersButton" layoutX="306.0" layoutY="22.0" mnemonicParsing="false" onAction="#showHistoryOfTransfers" prefHeight="58.0" prefWidth="106.0" style="-fx-background-color: #0269A4;" text="  Historia &#10;przelewów" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="closeButton" layoutX="83.0" layoutY="22.0" mnemonicParsing="false" onAction="#closeDialog" prefHeight="58.0" prefWidth="106.0" style="-fx-background-color: #0269A4;" text="Zamknij" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <ScrollPane prefHeight="200.0" prefWidth="321.0" vvalue="1.0" GridPane.columnIndex="1">
+                     <content>
+                        <GridPane prefHeight="680.0" prefWidth="490.0">
+                          <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="20.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="20.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints maxHeight="40.0" minHeight="1.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="40.0" minHeight="0.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="40.0" minHeight="2.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="40.0" minHeight="0.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="40.0" minHeight="0.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="40.0" minHeight="0.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="40.0" minHeight="0.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB; -fx-background-radius: 20 0 0 0;" GridPane.columnIndex="1">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="11.0" text="imie:" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB; -fx-background-radius: 0 20 0 0;" GridPane.columnIndex="2">
+                                 <children>
+                                    <Label fx:id="name" layoutX="67.0" layoutY="11.0" text="Label" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="11.0" text="nazwisko:" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB;" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                 <children>
+                                    <Label fx:id="surname" layoutX="67.0" layoutY="11.0" text="Label" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="11.0" text="pesel:" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB;" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                 <children>
+                                    <Label fx:id="pesel" layoutX="67.0" layoutY="11.0" text="Label" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB;" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="11.0" text="data urodzenia:" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB;" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                 <children>
+                                    <Label fx:id="dateOfBirth" layoutX="67.0" layoutY="11.0" text="Label" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB;" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="11.0" text="obywatelstwo: " />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB;" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                                 <children>
+                                    <Label fx:id="citizenship" layoutX="67.0" layoutY="11.0" text="Label" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB;" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="11.0" text="kraj urodzenia :" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB;" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                 <children>
+                                    <Label layoutX="12.0" layoutY="11.0" text="nazwisko panieńskie matki:" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB;" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                 <children>
+                                    <Label layoutX="13.0" layoutY="11.0" text="miejsce urodzenia:" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB;" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                                 <children>
+                                    <Label layoutX="12.0" layoutY="11.0" text="data ważności dowodu:" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB;" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="11.0" text="numer dowodu:" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB;" GridPane.columnIndex="1" GridPane.rowIndex="10">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="11.0" text="miasto:" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB;" GridPane.columnIndex="1" GridPane.rowIndex="11">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="11.0" text="ulica" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB;" GridPane.columnIndex="1" GridPane.rowIndex="12">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="11.0" text="numer budynku:" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="54.0" prefWidth="147.0" style="-fx-background-color: #E8E9EB;" GridPane.columnIndex="1" GridPane.rowIndex="13">
+                                 <children>
+                                    <Label layoutX="12.0" layoutY="16.0" text="numer mieszkania:" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB;" GridPane.columnIndex="1" GridPane.rowIndex="14">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="11.0" text="kod pocztowy:" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB;" GridPane.columnIndex="1" GridPane.rowIndex="15">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="11.0" text="numer telefonu:" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB;" GridPane.columnIndex="1" GridPane.rowIndex="16">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="11.0" text="adres email:" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB; -fx-background-radius: 0 0 0 20;" GridPane.columnIndex="1" GridPane.rowIndex="17">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="11.0" text="stan konta:" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB;" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                                 <children>
+                                    <Label fx:id="countryOfBirth" layoutX="67.0" layoutY="11.0" text="Label" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB;" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                                 <children>
+                                    <Label fx:id="motherMaidenName" layoutX="67.0" layoutY="11.0" text="Label" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB;" GridPane.columnIndex="2" GridPane.rowIndex="7">
+                                 <children>
+                                    <Label fx:id="placeOfBirth" layoutX="67.0" layoutY="11.0" text="Label" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB;" GridPane.columnIndex="2" GridPane.rowIndex="8">
+                                 <children>
+                                    <Label fx:id="expiryDate" layoutX="67.0" layoutY="11.0" text="Label" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB;" GridPane.columnIndex="2" GridPane.rowIndex="9">
+                                 <children>
+                                    <Label fx:id="idNumber" layoutX="67.0" layoutY="11.0" text="Label" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB;" GridPane.columnIndex="2" GridPane.rowIndex="10">
+                                 <children>
+                                    <Label fx:id="city" layoutX="67.0" layoutY="11.0" text="Label" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB;" GridPane.columnIndex="2" GridPane.rowIndex="11">
+                                 <children>
+                                    <Label fx:id="street" layoutX="67.0" layoutY="11.0" text="Label" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB;" GridPane.columnIndex="2" GridPane.rowIndex="12">
+                                 <children>
+                                    <Label fx:id="buildingNumber" layoutX="67.0" layoutY="11.0" text="Label" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB;" GridPane.columnIndex="2" GridPane.rowIndex="13">
+                                 <children>
+                                    <Label fx:id="flatNumber" layoutX="67.0" layoutY="11.0" text="Label" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB;" GridPane.columnIndex="2" GridPane.rowIndex="14">
+                                 <children>
+                                    <Label fx:id="zipCode" layoutX="67.0" layoutY="12.0" text="Label" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB;" GridPane.columnIndex="2" GridPane.rowIndex="15">
+                                 <children>
+                                    <Label fx:id="phoneNumber" layoutX="67.0" layoutY="12.0" text="Label" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB;" GridPane.columnIndex="2" GridPane.rowIndex="16">
+                                 <children>
+                                    <Label fx:id="emailAddress" layoutX="67.0" layoutY="12.0" text="Label" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB; -fx-background-radius: 0 0 20 0;" GridPane.columnIndex="2" GridPane.rowIndex="17">
+                                 <children>
+                                    <Label fx:id="balance" layoutX="67.0" layoutY="12.0" text="Label" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </GridPane>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </GridPane>
+         </children>
+      </AnchorPane>
+   </content>
+</DialogPane>

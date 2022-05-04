@@ -183,11 +183,21 @@ public class ClientMainPanelController {
     }
     @FXML
     void clearCreditForm(ActionEvent event){
-
+        creditAmount.clear();
+        installmentsQuantity.clear();
+        bruttoIncome.clear();
+        averageExpenses.clear();
+        peopleSupported.clear();
+        typeContract.setValue("Brak");
+        companyAddress.clear();
+        companyNIP.clear();
+        companyName.clear();
     }
     @FXML
     void sendCreditQuery(ActionEvent event)throws IOException{
-        CreditQuery creditQuery = new CreditQuery(Double.parseDouble(creditAmount.getText()),Integer.parseInt(installmentsQuantity.getText()),Double.parseDouble(bruttoIncome.getText()),Integer.parseInt(peopleSupported.getText()),Double.parseDouble(averageExpenses.getText()),typeContract.getValue(),companyName.getText(),companyNIP.getText(),companyAddress.getText(),((Client)Main.currentUser).getAccountNumber());
+        Double creditWorthiness =Double.parseDouble(installmentsQuantity.getText()) * (0.3 * Double.parseDouble(bruttoIncome.getText()))  - (500 *  Double.parseDouble(peopleSupported.getText())) - Double.parseDouble(averageExpenses.getText());
+
+        CreditQuery creditQuery = new CreditQuery(Double.parseDouble(creditAmount.getText()),Integer.parseInt(installmentsQuantity.getText()),Double.parseDouble(bruttoIncome.getText()),Integer.parseInt(peopleSupported.getText()),Double.parseDouble(averageExpenses.getText()),typeContract.getValue(),companyName.getText(),companyNIP.getText(),companyAddress.getText(),((Client)Main.currentUser).getAccountNumber(),creditWorthiness);
         Main.creditData.addCreditQuery(creditQuery);
         SerializeFunctions.serializeObjectToFile(Main.creditData,"src/main/resources/data/creditData.data");
     }

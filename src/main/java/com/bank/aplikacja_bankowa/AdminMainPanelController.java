@@ -7,6 +7,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
 
 import java.io.IOException;
+import java.time.LocalDate;
 
 public class AdminMainPanelController {
     @FXML
@@ -139,9 +140,10 @@ public class AdminMainPanelController {
         initClientTable();
         readCreditQuery();
         readClientsList();
+
         personName.setText(Main.currentUser.name);
         personSurname.setText(Main.currentUser.surname);
-
+        initCurrencyChoiceBox();
     }
     public void initCreditTable(){
         creditDateColumn = new TableColumn<>("Data");
@@ -244,6 +246,15 @@ public class AdminMainPanelController {
     }
     @FXML
     void addClient(ActionEvent event) throws IOException{
+        if(LocalDate.now().getYear()-clientDateOfBirth.getValue().getYear()<10){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Błąd dodania użytkownika");
+            alert.setContentText("Użytkownik jest zbyt młody.");
+            alert.setHeaderText("Nie można dodać użytkownika poniżej 10 roku życia.");
+            alert.showAndWait();
+            return;
+        }
+
         String accountNumber = Main.bankData.generateAccountNumber();
         SerializeFunctions.serializeObjectToFile(Main.bankData,"src/main/resources/data/bankData.data");
         System.out.println("wybrany" + accountNumber);
@@ -344,5 +355,12 @@ public class AdminMainPanelController {
                 }
             }
         });
+    }
+    void initCurrencyChoiceBox(){
+        for(int i = 0;i<Main.ratesTable.getExchangeRatesTables().get(0).getRates().size();i++){
+            clientCurrency.getItems().add(Main.ratesTable.getExchangeRatesTables().get(0).getRates().get(i).getCode());
+        }
+        clientCurrency.getItems().add("PLN");
+        clientCurrency.setValue("PLN");
     }
 }

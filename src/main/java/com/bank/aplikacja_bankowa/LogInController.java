@@ -8,15 +8,14 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
+
 import java.io.IOException;
 
 
 public class LogInController {
-    @FXML
-    private Button loginButton;
 
-    @FXML
-    private Button cancelButton;
+
+
 
     @FXML
     private Label wrongLogin;
@@ -47,7 +46,6 @@ public class LogInController {
         else{
             wrongLogin.setText("Nie poprawny login lub hasło !!");
         }
-
 
     }
     @FXML

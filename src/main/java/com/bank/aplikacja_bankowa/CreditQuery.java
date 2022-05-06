@@ -18,7 +18,11 @@ public class CreditQuery implements Serializable {
 
      private String date;
 
-    public CreditQuery(Double amount, Integer installmentsQuantity, Double bruttoIncome,Integer peopleSupported, Double averageExpenses , String contractType, String companyName, String companyNIP,String companyAddress, String accountNumber, Double creditWorthiness) {
+     private String status;
+
+    public CreditQuery(Double amount, Integer installmentsQuantity, Double bruttoIncome,Integer peopleSupported,
+                       Double averageExpenses , String contractType, String companyName, String companyNIP,String companyAddress,
+                       String accountNumber, Double creditWorthiness) {
         this.amount = amount;
         this.installmentsQuantity = installmentsQuantity;
         this.bruttoIncome = bruttoIncome;
@@ -30,8 +34,10 @@ public class CreditQuery implements Serializable {
         this.companyNIP = companyNIP;
         this.accountNumber = accountNumber;
         this.creditWorthiness = creditWorthiness;
+        this.creditToBePaid = (double)Math.round((amount*1.1));
+        this.installmentsQuantityToBePaid = installmentsQuantity;
         date = LocalDate.now().toString();
-
+        status = "Złożony";
     }
 
     public Double getAmount() {
@@ -74,5 +80,29 @@ public class CreditQuery implements Serializable {
 
     public String getDate() {
         return date;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public Double getCreditToBePaid() {
+        return creditToBePaid;
+    }
+
+    public void setCreditToBePaid(Double creditToBePaid) {
+        this.creditToBePaid = creditToBePaid;
+    }
+
+    public Integer getInstallmentsQuantityToBePaid() {
+        return installmentsQuantityToBePaid;
+    }
+
+    public void setInstallmentsQuantityToBePaid(Integer installmentsQuantityToBePaid) {
+        this.installmentsQuantityToBePaid = installmentsQuantityToBePaid;
     }
 }

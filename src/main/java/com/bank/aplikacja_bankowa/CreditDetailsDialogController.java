@@ -38,19 +38,19 @@ public class CreditDetailsDialogController {
     @FXML
     private Label creditStanding;
 
-
+    private CreditQuery creditQuery;
     @FXML
     private void initialize()throws ClassNotFoundException,IOException{
         setCreditData();
     }
 
     public void setCreditData()throws ClassNotFoundException,IOException {
-        CreditQuery creditQuery = AdminMainPanelController.currentSelectedCreditQuery;
+        creditQuery = AdminMainPanelController.currentSelectedCreditQuery;
 
         Client client = (Client) SerializeFunctions.deSerializeObjectFromFile("src/main/resources/data/"+Main.userFileNameTab.findUserFileByAccountNumber(creditQuery.getAccountNumber())+".data");
         name.setText(client.getName());
         surname.setText(client.getSurname());
-        PESEL.setText("Do zrobienie !!!!!!!!!!!");
+        PESEL.setText(client.getPesel());
 
         creditAmount.setText(creditQuery.getAmount().toString());
         installmentsQuantity.setText(creditQuery.getInstallmentsQuantity().toString());
@@ -75,5 +75,24 @@ public class CreditDetailsDialogController {
     static public void setDialog(Dialog dialog) {
         CreditDetailsDialog = dialog;
 
+    }
+
+    @FXML
+    void acceptCreditQuery(ActionEvent event)throws IOException, ClassNotFoundException{
+        creditQuery.setStatus("Zaakceptowany");
+        String fileName = Main.userFileNameTab.findUserFileByAccountNumber(creditQuery.getAccountNumber());
+
+        Client client = (Client) SerializeFunctions.deSerializeObjectFromFile("src/main/resources/data/"+fileName+".data");
+        client.getTransfers().add(new Transfer(LocalDate.now(),Transfer.Type.CREDIT,"Przyznano kredyt", creditQuery.getAmount(),
+                "435649900000000000000000","GGG-City ul. GGG-teamu 71/213, 71-213","Go-Get-Gold Bank SA",
+                creditQuery.getAccountNumber(), client.getCity() +" "+client.getStreet()+ " " +client.getBuildingNumber()+ " " +client.getFlatNumber()+ ", " +client.getZipCode(),
+                client.getName()+" "+client.getSurname()));
+        client.setMoney(client.getMoney()+Bank.convertCurrency("PLN",client.getClientCurrency(),creditQuery.getAmount()));
+        SerializeFunctions.serializeObjectToFile(client,"src/main/resources/data/"+fileName+".data");
+
+    }
+    @FXML
+    void rejectCreditQuery(ActionEvent event){
+        creditQuery.setStatus("Odrzucony");
     }
 }

@@ -2,6 +2,7 @@ package com.bank.aplikacja_bankowa;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
@@ -107,7 +108,18 @@ public class ClientDetailsDialogController {
     }
     @FXML
     void showHistoryOfTransfers(ActionEvent event) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("clientTransfersDetails.fxml"));
+        ClientTransfersDetailsDialogController.setCurrentClient(currentClient);
+        Dialog dialog = new Dialog<>();
 
+        try{
+            dialog.setDialogPane(loader.load());
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+        ClientTransfersDetailsDialogController.setDialog(dialog);
+
+        dialog.showAndWait();
     }
     public static void setCurrentClient(Client client){
         currentClient = client;

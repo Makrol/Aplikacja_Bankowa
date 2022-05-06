@@ -10,12 +10,18 @@ import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
 import javafx.scene.layout.Region;
 import javafx.scene.text.Text;
+import org.apache.commons.math3.analysis.function.Floor;
+import org.apache.commons.math3.util.Precision;
 
 import java.io.IOException;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.time.LocalDate;
 
 public class ClientMainPanelController {
 
+
+    public static CreditQuery currentCredit;
     static public Transfer currentSelectedTransfer;
     @FXML
     private Label currency;
@@ -83,12 +89,70 @@ public class ClientMainPanelController {
     @FXML
     private TextField companyAddress;
 
+    @FXML
+    private  TableView clientCredits;
 
+
+    private TableColumn<CreditQuery,String> creditDateColumn;
+    private TableColumn<CreditQuery,String> creditStatusColumn;
+    private TableColumn<CreditQuery,String> creditAmountColumn;
 
     private TableColumn<Transfer,String> dateColumn;
     private TableColumn<Transfer,String> typeColumn;
     private TableColumn<Transfer,String> descriptionColumn;
     private TableColumn<Transfer,String> amountColumn;
+
+    void initCreditTable(){
+        creditDateColumn = new TableColumn<>("Data złożenia");
+        creditDateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
+        creditDateColumn.setPrefWidth(150);
+
+        creditStatusColumn = new TableColumn<>("Status kredytu");
+        creditStatusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
+        creditStatusColumn.setPrefWidth(200);
+
+        creditAmountColumn = new TableColumn<>("Pozostała kwota kredytu");
+        creditAmountColumn.setCellValueFactory(new PropertyValueFactory<>("creditToBePaid"));
+        creditAmountColumn.setPrefWidth(200);
+
+
+        clientCredits.getColumns().add(creditDateColumn);
+        clientCredits.getColumns().add(creditStatusColumn);
+        clientCredits.getColumns().add(creditAmountColumn);
+
+        clientCredits.setRowFactory(tv->{
+            TableRow<CreditQuery> row = new TableRow<>();
+            row.setOnMouseClicked(event -> {
+                if(event.getClickCount()==2&&(!row.isEmpty())){
+                    showCreditDetails(row.getItem());
+                }
+            });
+            return row;
+        });
+        for(CreditQuery cQ:Main.creditData.getCreditDataContainer()){
+            if(cQ.getAccountNumber().equals(((Client)Main.currentUser).getAccountNumber())){
+                clientCredits.getItems().add(cQ);
+            }
+        }
+
+    }
+    private void showCreditDetails(CreditQuery credit){
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("payOffInstallmentDialog.fxml"));
+        currentCredit = credit;
+        Dialog dialog = new Dialog<>();
+
+        try {
+            dialog.setDialogPane(loader.load());
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+        PayOffInstallmentDialogController.setDialog(dialog);
+
+
+        dialog.showAndWait();
+
+
+    }
 
     @FXML
     void logout(ActionEvent event)throws IOException {
@@ -99,13 +163,21 @@ public class ClientMainPanelController {
     @FXML
     public void initialize(){
 
+        DecimalFormatSymbols otherSymbols = new DecimalFormatSymbols();
+        otherSymbols.setDecimalSeparator('.');
+
+        DecimalFormat decimalFormat = new DecimalFormat("#.##",otherSymbols);
+
+        currency.setText(((Client) Main.currentUser).getClientCurrency());
         name.setText(Main.currentUser.name);
         surname.setText(Main.currentUser.surname);
         accountNumber.setText(((Client) Main.currentUser).getAccountNumber());
         money.setText(((Client) Main.currentUser).getMoney().toString());
+        money.setText(decimalFormat.format(((Client) Main.currentUser).getMoney()));
         initColumns();
         readUserTransfers();
         initChoiceBox();
+        initCreditTable();
     }
     @FXML
     void doTransfer(ActionEvent event) throws IOException,ClassNotFoundException {
@@ -121,6 +193,13 @@ public class ClientMainPanelController {
             alert.showAndWait();
 
         }
+        else if(Double.parseDouble(transferAmount.getText())>((Client)Main.currentUser).getMoney()||Double.parseDouble(transferAmount.getText())<0){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Błąd przelewu!");
+            alert.setContentText("Nie masz wystarczająco środków.");
+            alert.setHeaderText("Nie można wykonać przelewu.");
+            alert.showAndWait();
+        }
         else{
             Client source = (Client)Main.currentUser;
             Client destination = (Client) SerializeFunctions.deSerializeObjectFromFile("src/main/resources/data/"+recipientFileName+".data");
@@ -132,7 +211,7 @@ public class ClientMainPanelController {
                     recipientAddress.getText(),
                     recipientName.getText());
 
-            destination.getTransfers().add(new Transfer(LocalDate.now(), Transfer.Type.INCOMING,transferTitle.getText(),Double.parseDouble(transferAmount.getText()),
+            destination.getTransfers().add(new Transfer(LocalDate.now(), Transfer.Type.INCOMING,transferTitle.getText(),Bank.convertCurrency(source.getClientCurrency(), destination.getClientCurrency(),Double.parseDouble(transferAmount.getText())),
                         source.getAccountNumber(),
                         source.getStreet()+" "+source.getBuildingNumber()+"/"+source.getFlatNumber()+" "+source.getZipCode()+" "+source.getCity(),
                         source.getSurname()+" "+source.getName(),
@@ -140,8 +219,7 @@ public class ClientMainPanelController {
                         recipientAddress.getText(),
                         recipientName.getText()
                     ));
-
-            destination.setMoney(destination.getMoney()+Double.parseDouble(transferAmount.getText()));
+            destination.setMoney(destination.getMoney()+Bank.convertCurrency(source.getClientCurrency(), destination.getClientCurrency(),Double.parseDouble(transferAmount.getText())));
             SerializeFunctions.serializeObjectToFile(destination,"src/main/resources/data/"+recipientFileName+".data");
 
             ((Client)Main.currentUser).changeMoney(-Double.parseDouble(transferAmount.getText()));
@@ -149,10 +227,13 @@ public class ClientMainPanelController {
             SerializeFunctions.serializeObjectToFile(Main.currentUser,"src/main/resources/data/"+Main.userFileNameTab.findUserFileByAccountNumber(((Client) Main.currentUser).getAccountNumber())+".data");
 
 
+            DecimalFormatSymbols otherSymbols = new DecimalFormatSymbols();
+            otherSymbols.setDecimalSeparator('.');
 
-            money.setText(new String(String.valueOf((Double.parseDouble(money.getText())-Double.parseDouble(transferAmount.getText())))));
+            DecimalFormat decimalFormat = new DecimalFormat("#.##",otherSymbols);
 
 
+            money.setText(decimalFormat.format(Double.parseDouble(money.getText())-Double.parseDouble(transferAmount.getText())));
         }
 
 

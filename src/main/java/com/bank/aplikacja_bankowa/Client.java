@@ -113,4 +113,12 @@ public class Client extends Person{
         return super.citizenship;
     }
     public String getDateOfBirth(){ return super.dateOfBirth.toString(); }
+
+    public String getClientCurrency() {
+        return clientCurrency;
+    }
+
+    public void setClientCurrency(String clientCurrency) {
+        this.clientCurrency = clientCurrency;
+    }
 }

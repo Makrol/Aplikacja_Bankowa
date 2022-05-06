@@ -1,11 +1,20 @@
 package com.bank.aplikacja_bankowa;
 
+
+
+
+import http.TableA;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import models.tables.ArrayOfExchangeRatesTable;
+import org.json.JSONException;
+
 
 import java.io.IOException;
+import java.math.BigDecimal;
+
 
 public class Main extends Application {
     private static Stage mainStage;
@@ -13,9 +22,24 @@ public class Main extends Application {
     public static Person currentUser;
     public static Bank bankData;
     public static CreditData creditData;
+
+    public static ArrayOfExchangeRatesTable ratesTable;
+
+    static {
+        try {
+            ratesTable = new TableA().lastTopCountTables(30);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     @Override
-    public void start(Stage stage) throws IOException,ClassNotFoundException {
-       // bankData = new Bank();
+    public void start(Stage stage) throws IOException,ClassNotFoundException{
+
+
+        //bankData = new Bank();
+        //SerializeFunctions.serializeObjectToFile(bankData,"src/main/resources/data/bankData.data");
         //SerializeFunctions.serializeObjectToFile(new CreditData(),"src/main/resources/data/creditData.data");
         creditData = (CreditData)SerializeFunctions.deSerializeObjectFromFile("src/main/resources/data/creditData.data");
         bankData = (Bank)SerializeFunctions.deSerializeObjectFromFile("src/main/resources/data/bankData.data");
@@ -32,6 +56,7 @@ public class Main extends Application {
         System.out.println(userFileNameTab.userFileName);
         System.out.println(userFileNameTab.userLoginData);
         System.out.println(userFileNameTab.accountNumberFile);
+
     }public static void main(String[] args) {
         launch();
     }

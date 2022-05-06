@@ -184,12 +184,12 @@
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="15">
                      <children>
-                        <Button layoutX="57.0" layoutY="5.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #0269A4;" text="Zatwierdź" textFill="WHITE" />
+                        <Button fx:id="acceptCreditButton" layoutX="57.0" layoutY="5.0" mnemonicParsing="false" onAction="#acceptCreditQuery" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #0269A4;" text="Zatwierdź" textFill="WHITE" />
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="15">
                      <children>
-                        <Button layoutX="61.0" layoutY="5.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #0269A4;" text="Odrzuć" textFill="WHITE" />
+                        <Button fx:id="rejectButton" layoutX="61.0" layoutY="5.0" mnemonicParsing="false" onAction="#rejectCreditQuery" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #0269A4;" text="Odrzuć" textFill="WHITE" />
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E9EB; -fx-background-radius: 0 0 0 20;" GridPane.columnIndex="1" GridPane.rowIndex="13">

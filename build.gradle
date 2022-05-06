@@ -3,6 +3,7 @@ plugins {
     id 'application'
     id 'org.openjfx.javafxplugin' version '0.0.10'
     id 'org.beryx.jlink' version '2.24.1'
+
 }
 
 group 'com.bank'
@@ -10,6 +11,7 @@ version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
+    maven { url "https://jitpack.io" }
 }
 
 ext {
@@ -38,6 +40,12 @@ dependencies {
     implementation ('org.apache.pdfbox:pdfbox:2.0.20')
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+    implementation 'com.github.brzozasr:exchange-rates-nbp:1.0.1'
+    implementation group: 'org.apache.commons', name: 'commons-math3', version: '3.6.1'
+
+
+
+
 
 }
 

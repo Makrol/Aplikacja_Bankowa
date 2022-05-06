@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<DialogPane prefHeight="556.0" prefWidth="647.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bank.aplikacja_bankowa.PayOffInstallmentDialogController">
+   <content>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <Label layoutX="219.0" layoutY="33.0" text="Ilość rat do spłacenia:">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <Label fx:id="installmentCounter" layoutX="258.0" layoutY="102.0" text="Label">
+               <font>
+                  <Font size="56.0" />
+               </font>
+            </Label>
+            <Button layoutX="14.0" layoutY="286.0" mnemonicParsing="false" onAction="#payOffInstallment" prefHeight="124.0" prefWidth="279.0" style="-fx-background-color: #0269A4;" text="Spłać rate" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Button>
+            <Button layoutX="354.0" layoutY="286.0" mnemonicParsing="false" onAction="#closeDialog" prefHeight="124.0" prefWidth="279.0" style="-fx-background-color: #0269A4;" text="Zamknij" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </content>
+   <header>
+      <AnchorPane prefHeight="67.0" prefWidth="647.0">
+         <children>
+            <Label layoutX="240.0" layoutY="7.0" text="Spłać rate">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </header>
+</DialogPane>

@@ -113,6 +113,9 @@ public class AdminMainPanelController {
     private Button logoutButton;
 
     @FXML
+    private ChoiceBox<String> clientCurrency;
+
+    @FXML
     private TableView creditTable;
 
     private TableColumn<CreditQuery,String> creditDateColumn;
@@ -257,7 +260,6 @@ public class AdminMainPanelController {
 
         String accountNumber = Main.bankData.generateAccountNumber();
         SerializeFunctions.serializeObjectToFile(Main.bankData,"src/main/resources/data/bankData.data");
-        System.out.println("wybrany" + accountNumber);
         Client client = new Client(
                   clientName.getText(),
                 clientSurname.getText(),
@@ -277,7 +279,8 @@ public class AdminMainPanelController {
                 clientBuildingNumber.getText(),
                 clientFlatNumber.getText(),
                 clientZipCode.getText(),
-                accountNumber
+                accountNumber,
+                clientCurrency.getValue()
         );
         SerializeFunctions.serializePerson(client,clientUsername.getText(),clientPassword.getText(),accountNumber);
         clearClientForm(new ActionEvent());

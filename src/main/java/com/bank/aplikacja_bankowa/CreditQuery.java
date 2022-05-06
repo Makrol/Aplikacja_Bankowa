@@ -15,6 +15,8 @@ public class CreditQuery implements Serializable {
      private String companyNIP;
      private String accountNumber;
      private Double creditWorthiness;
+     private Double creditToBePaid;
+     private Integer installmentsQuantityToBePaid;
 
      private String date;
 

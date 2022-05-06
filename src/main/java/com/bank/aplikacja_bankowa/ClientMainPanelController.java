@@ -182,7 +182,6 @@ public class ClientMainPanelController {
     @FXML
     void doTransfer(ActionEvent event) throws IOException,ClassNotFoundException {
         String accountNumber = recipientAccountNumber.getText();
-        System.out.println("Wysyłam do: "+accountNumber);
         String recipientFileName=Main.userFileNameTab.findUserFileByAccountNumber(accountNumber);
 
         if(recipientFileName.equals("")){
@@ -236,11 +235,15 @@ public class ClientMainPanelController {
             money.setText(decimalFormat.format(Double.parseDouble(money.getText())-Double.parseDouble(transferAmount.getText())));
         }
 
-
+        clearTransferForm(event);
     }
     @FXML
     void clearTransferForm(ActionEvent event) {
-
+        recipientName.clear();
+        recipientAddress.clear();
+        transferTitle.clear();
+        transferAmount.clear();
+        recipientAccountNumber.clear();
     }
 
     @FXML
@@ -346,7 +349,6 @@ public class ClientMainPanelController {
         }
         TransferDetailsDialogController.setDialog(dialog);
         dialog.showAndWait();
-
 
     }
 

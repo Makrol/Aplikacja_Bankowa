@@ -5,6 +5,7 @@ import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
 
 import java.io.IOException;
+import java.time.LocalDate;
 
 public class CreditDetailsDialogController {
 

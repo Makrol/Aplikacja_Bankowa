@@ -17,10 +17,14 @@ public class Client extends Person{
     private String zipCode;
     private String accountNumber;
     private Double money;
+    private String clientCurrency;
 
     private ArrayList<Transfer> transfers;
 
-    public Client(String name, String surname, String citizenship, LocalDate dateOfBirth, String email, String phoneNumber, Boolean admin, String pesel, String countryOfBirth, String motherMaidenSurname, String placeOfBirth, LocalDate idExpirationDate, String idNumber, String city, String street, String buildingNumber, String flatNumber, String zipCode, String accountNumber) {
+    public Client(String name, String surname, String citizenship, LocalDate dateOfBirth, String email,
+                  String phoneNumber, Boolean admin, String pesel, String countryOfBirth, String motherMaidenSurname,
+                  String placeOfBirth, LocalDate idExpirationDate, String idNumber, String city, String street,
+                  String buildingNumber, String flatNumber, String zipCode, String accountNumber, String clientCurrency) {
         super(name, surname, citizenship, dateOfBirth, email, phoneNumber, admin);
         this.pesel = pesel;
         this.countryOfBirth = countryOfBirth;
@@ -34,8 +38,10 @@ public class Client extends Person{
         this.flatNumber = flatNumber;
         this.zipCode = zipCode;
         this.accountNumber = accountNumber;
+        this.clientCurrency = clientCurrency;
         money=200d;
         transfers = new ArrayList<>();
+
     }
     public String getAccountNumber(){
         return accountNumber;

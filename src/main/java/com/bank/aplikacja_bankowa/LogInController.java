@@ -44,7 +44,7 @@ public class LogInController {
             }
         }
         else{
-            wrongLogin.setText("Nie poprawny login lub hasło !!");
+            wrongLogin.setText("Niepoprawny login lub hasło !!");
         }
 
     }
